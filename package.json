@@ -2,12 +2,12 @@
   "name": "automa-vault",
   "version": "1.0.0",
   "description": "Self-contained Automa workflow and package vault",
-  "main": "vault.js",
+  "main": "../automa-cli/bin/cli.js",
   "scripts": {
-    "push": "node vault.js push",
-    "pull": "node vault.js pull",
-    "status": "node vault.js status",
-    "lint": "node vault.js lint"
+    "push": "node ../automa-cli/bin/cli.js push --project=crm --vault-path=.",
+    "pull": "node ../automa-cli/bin/cli.js pull --project=crm --vault-path=.",
+    "status": "node ../automa-cli/bin/cli.js status --project=crm --vault-path=.",
+    "lint": "node ../automa-cli/bin/cli.js lint --project=crm --vault-path=."
   },
   "dependencies": {
     "dotenv": "^17.4.2"
