@@ -67,7 +67,11 @@ function isEqual(obj1, obj2) {
 // Fetch helper
 async function fetchTableData(tableName) {
   try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/${tableName}?is_deleted=eq.false`, {
+    let url = `${SUPABASE_URL}/rest/v1/${tableName}`;
+    if (tableName !== 'html_snapshots') {
+      url += '?is_deleted=eq.false';
+    }
+    const res = await fetch(url, {
       headers: {
         'apikey': ANON_KEY,
         'Authorization': `Bearer ${ANON_KEY}`
@@ -145,6 +149,14 @@ async function pushTable(tableName, folderName) {
           }
         }
 
+        // Avoid invalid UUID types in DB
+        if (tableName === 'html_snapshots' && rowToInsert.id) {
+          const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+          if (!uuidRegex.test(rowToInsert.id)) {
+            delete rowToInsert.id;
+          }
+        }
+
         rowToInsert.is_deleted = false;
         rowToInsert.client_updated_at = new Date().toISOString();
         rows.push(rowToInsert);
@@ -160,22 +172,24 @@ async function pushTable(tableName, folderName) {
 
   // Deletion tracking (Soft Delete on DB)
   let deletedCount = 0;
-  for (const dbRecord of existingDbRecords) {
-    const recordId = tableName === 'variables' ? dbRecord.name : dbRecord.id;
-    if (!processedIds.has(recordId) && !dbRecord.is_deleted) {
-      const rowToDelete = { 
-        ...dbRecord, 
-        is_deleted: true, 
-        client_updated_at: new Date().toISOString() 
-      };
-      
-      delete rowToDelete.created_at;
-      delete rowToDelete.updated_at;
-      delete rowToDelete.createdAt;
-      delete rowToDelete.updatedAt;
+  if (tableName !== 'html_snapshots') {
+    for (const dbRecord of existingDbRecords) {
+      const recordId = tableName === 'variables' ? dbRecord.name : dbRecord.id;
+      if (!processedIds.has(recordId) && !dbRecord.is_deleted) {
+        const rowToDelete = { 
+          ...dbRecord, 
+          is_deleted: true, 
+          client_updated_at: new Date().toISOString() 
+        };
+        
+        delete rowToDelete.created_at;
+        delete rowToDelete.updated_at;
+        delete rowToDelete.createdAt;
+        delete rowToDelete.updatedAt;
 
-      rows.push(rowToDelete);
-      deletedCount++;
+        rows.push(rowToDelete);
+        deletedCount++;
+      }
     }
   }
 
@@ -254,6 +268,8 @@ async function pullTable(tableName, folderName) {
         baseName = recordData.name;
       } else if (recordData.label) {
         baseName = recordData.label;
+      } else if (recordData.nav_name) {
+        baseName = recordData.nav_name;
       }
       
       // Sanitize filename (replace invalid chars for Windows, but spaces and brackets are fine)
