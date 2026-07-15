@@ -46,5 +46,5 @@
     "asBlock": true
   },
   "description": "Chụp HTML DOM và lưu vào DB (dùng biến snapshotName hoặc title)",
-  "updatedAt": 1784086566819
+  "updatedAt": 1784054271355
 }

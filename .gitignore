@@ -1,0 +1,4 @@
+node_modules/
+.vault/settings.local.json
+automa-tasks.json
+temp_shared.js

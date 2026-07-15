@@ -1,5 +1,4 @@
 {
   "name": "supabaseUrl",
-  "value": "http://127.0.0.1:54321",
-  "is_deleted": false
+  "value": "http://127.0.0.1:54321"
 }

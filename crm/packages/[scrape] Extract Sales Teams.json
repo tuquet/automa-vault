@@ -46,5 +46,5 @@
     "asBlock": true
   },
   "description": "Quét bảng danh sách các Team hiện có và lưu vào biến toàn cục {{variables.scraped_sales_teams}}",
-  "updatedAt": 1784086566835
+  "updatedAt": 1784054271363
 }

@@ -1,0 +1,15 @@
+{
+  "name": "automa-vault",
+  "version": "1.0.0",
+  "description": "Self-contained Automa workflow and package vault",
+  "main": "vault.js",
+  "scripts": {
+    "push": "node vault.js push",
+    "pull": "node vault.js pull",
+    "status": "node vault.js status",
+    "lint": "node vault.js lint"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}

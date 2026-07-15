@@ -46,5 +46,5 @@
     "asBlock": true
   },
   "description": "Lấy danh sách nhân sự của một Team và lưu vào biến {{variables.scraped_employees}}",
-  "updatedAt": 1784086566834
+  "updatedAt": 1784054271363
 }

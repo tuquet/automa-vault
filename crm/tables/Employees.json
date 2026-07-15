@@ -27,6 +27,5 @@
       "name": "Leads",
       "type": "string"
     }
-  ],
-  "is_deleted": false
+  ]
 }

@@ -46,5 +46,5 @@
     "asBlock": true
   },
   "description": "Quét các giá trị trong Drawer của Category và lưu vào {{variables.scraped_codebook_properties}}",
-  "updatedAt": 1784086566832
+  "updatedAt": 1784054271361
 }

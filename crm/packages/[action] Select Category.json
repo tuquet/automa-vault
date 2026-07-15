@@ -46,5 +46,5 @@
     "asBlock": true
   },
   "description": "Click vào một Category theo {{variables.select_code_type}}",
-  "updatedAt": 1784086566822
+  "updatedAt": 1784054271357
 }

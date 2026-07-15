@@ -46,5 +46,5 @@
     "asBlock": true
   },
   "description": "Quét danh sách Code Type và lưu vào {{variables.scraped_codebook_categories}}",
-  "updatedAt": 1784086566833
+  "updatedAt": 1784054271362
 }

@@ -1,122 +1,119 @@
-[
-  {
-    "id": "r_emp_data_1",
-    "table_id": "t_employees",
-    "data": {
-      "items": [
-        {
-          "Name": "Nguyễn Văn Tuấn",
-          "Role": "GL",
-          "Leads": "G1",
-          "Employee": "E0001",
-          "Username": "nvtuan"
-        },
-        {
-          "Name": "Nguyễn Văn Đạt",
-          "Role": "BUL",
-          "Leads": "BU01",
-          "Employee": "E0006",
-          "Username": "nvdat"
-        },
-        {
-          "Name": "Nguyễn Văn Nam",
-          "Role": "BUL",
-          "Leads": "BU02",
-          "Employee": "E0007",
-          "Username": "nvnam"
-        },
-        {
-          "Name": "Nguyễn Văn Hòa",
-          "Role": "BUL",
-          "Leads": "BU03",
-          "Employee": "E0008",
-          "Username": "nvhoa"
-        },
-        {
-          "Name": "Nguyễn Văn Linh",
-          "Role": "GL",
-          "Leads": "G2",
-          "Employee": "E0002",
-          "Username": "nvlinh"
-        },
-        {
-          "Name": "Nguyễn Văn Duy",
-          "Role": "BUL",
-          "Leads": "BU08",
-          "Employee": "E0013",
-          "Username": "nvduy"
-        },
-        {
-          "Name": "Nguyễn Văn Ngân",
-          "Role": "BUL",
-          "Leads": "BU09",
-          "Employee": "E0014",
-          "Username": "nvngan"
-        },
-        {
-          "Name": "Nguyễn Văn Phúc",
-          "Role": "BUL",
-          "Leads": "BU10",
-          "Employee": "E0015",
-          "Username": "nvphuc"
-        },
-        {
-          "Name": "Nguyễn Văn Hùng",
-          "Role": "GL",
-          "Leads": "G3",
-          "Employee": "E0003",
-          "Username": "nvhung"
-        },
-        {
-          "Name": "Nguyễn Văn Vy",
-          "Role": "BUL",
-          "Leads": "BU15",
-          "Employee": "E0020",
-          "Username": "nvvy"
-        },
-        {
-          "Name": "Nguyễn Thị Tuấn",
-          "Role": "BUL",
-          "Leads": "BU16",
-          "Employee": "E0021",
-          "Username": "nttuan"
-        },
-        {
-          "Name": "Nguyễn Thị Linh",
-          "Role": "BUL",
-          "Leads": "BU17",
-          "Employee": "E0022",
-          "Username": "ntlinh"
-        }
-      ],
-      "columnsIndex": {
-        "col_name": {
-          "name": "Name",
-          "type": "string",
-          "index": 3
-        },
-        "col_role": {
-          "name": "Role",
-          "type": "string",
-          "index": 1
-        },
-        "col_leads": {
-          "name": "Leads",
-          "type": "string",
-          "index": 4
-        },
-        "col_employee": {
-          "name": "Employee",
-          "type": "string",
-          "index": 2
-        },
-        "col_username": {
-          "name": "Username",
-          "type": "string",
-          "index": 0
-        }
+{
+  "id": "r_emp_data_1",
+  "table_id": "t_employees",
+  "data": {
+    "items": [
+      {
+        "Name": "Nguyễn Văn Tuấn",
+        "Role": "GL",
+        "Leads": "G1",
+        "Employee": "E0001",
+        "Username": "nvtuan"
+      },
+      {
+        "Name": "Nguyễn Văn Đạt",
+        "Role": "BUL",
+        "Leads": "BU01",
+        "Employee": "E0006",
+        "Username": "nvdat"
+      },
+      {
+        "Name": "Nguyễn Văn Nam",
+        "Role": "BUL",
+        "Leads": "BU02",
+        "Employee": "E0007",
+        "Username": "nvnam"
+      },
+      {
+        "Name": "Nguyễn Văn Hòa",
+        "Role": "BUL",
+        "Leads": "BU03",
+        "Employee": "E0008",
+        "Username": "nvhoa"
+      },
+      {
+        "Name": "Nguyễn Văn Linh",
+        "Role": "GL",
+        "Leads": "G2",
+        "Employee": "E0002",
+        "Username": "nvlinh"
+      },
+      {
+        "Name": "Nguyễn Văn Duy",
+        "Role": "BUL",
+        "Leads": "BU08",
+        "Employee": "E0013",
+        "Username": "nvduy"
+      },
+      {
+        "Name": "Nguyễn Văn Ngân",
+        "Role": "BUL",
+        "Leads": "BU09",
+        "Employee": "E0014",
+        "Username": "nvngan"
+      },
+      {
+        "Name": "Nguyễn Văn Phúc",
+        "Role": "BUL",
+        "Leads": "BU10",
+        "Employee": "E0015",
+        "Username": "nvphuc"
+      },
+      {
+        "Name": "Nguyễn Văn Hùng",
+        "Role": "GL",
+        "Leads": "G3",
+        "Employee": "E0003",
+        "Username": "nvhung"
+      },
+      {
+        "Name": "Nguyễn Văn Vy",
+        "Role": "BUL",
+        "Leads": "BU15",
+        "Employee": "E0020",
+        "Username": "nvvy"
+      },
+      {
+        "Name": "Nguyễn Thị Tuấn",
+        "Role": "BUL",
+        "Leads": "BU16",
+        "Employee": "E0021",
+        "Username": "nttuan"
+      },
+      {
+        "Name": "Nguyễn Thị Linh",
+        "Role": "BUL",
+        "Leads": "BU17",
+        "Employee": "E0022",
+        "Username": "ntlinh"
       }
-    },
-    "is_deleted": false
+    ],
+    "columnsIndex": {
+      "col_name": {
+        "name": "Name",
+        "type": "string",
+        "index": 3
+      },
+      "col_role": {
+        "name": "Role",
+        "type": "string",
+        "index": 1
+      },
+      "col_leads": {
+        "name": "Leads",
+        "type": "string",
+        "index": 4
+      },
+      "col_employee": {
+        "name": "Employee",
+        "type": "string",
+        "index": 2
+      },
+      "col_username": {
+        "name": "Username",
+        "type": "string",
+        "index": 0
+      }
+    }
   }
-]
+}
