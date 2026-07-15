@@ -381,7 +381,7 @@ async function printStatus(tableName, folderName) {
 async function main() {
   if (action === 'lint') {
     try {
-      execSync(`node "${path.join(__dirname, 'lint-workflows.js')}" --project=${projectName}`, { stdio: 'inherit' });
+      execSync(`node "${path.join(__dirname, '../automa-cli/bin/lint.js')}" --project=${projectName} --vault-path="${__dirname}"`, { stdio: 'inherit' });
     } catch (e) {
       process.exit(1);
     }
@@ -392,7 +392,7 @@ async function main() {
     console.log(`Starting push to database (Diff Sync Mode) for project: ${projectName}...`);
     try {
       console.log('Running Workflow Linter...');
-      execSync(`node "${path.join(__dirname, 'lint-workflows.js')}" --project=${projectName}`, { stdio: 'inherit' });
+      execSync(`node "${path.join(__dirname, '../automa-cli/bin/lint.js')}" --project=${projectName} --vault-path="${__dirname}"`, { stdio: 'inherit' });
       console.log('Running Workflow Auto-Aligner...');
       execSync(`node "${path.join(__dirname, 'align-workflows.js')}" --project=${projectName}`, { stdio: 'inherit' });
     } catch (err) {
