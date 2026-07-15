@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Vault: Install Dependencies",
+      "type": "shell",
+      "command": "pnpm install",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "group": "install"
+      }
+    },
+    {
+      "label": "Vault: Push to Database",
+      "type": "shell",
+      "command": "npm run push -- --project=crm",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Vault: Pull from Database",
+      "type": "shell",
+      "command": "npm run pull -- --project=crm",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Vault: Check Sync Status",
+      "type": "shell",
+      "command": "npm run status -- --project=crm",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Vault: Lint Workflows & Packages",
+      "type": "shell",
+      "command": "npm run lint -- --project=crm",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
