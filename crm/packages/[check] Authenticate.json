@@ -1,0 +1,70 @@
+{
+  "id": "iMMLDg_-1mqZQTHHVDKxt",
+  "data": {
+    "zoom": 1,
+    "edges": [],
+    "nodes": [
+      {
+        "id": "bxzcqxp",
+        "data": {
+          "findBy": "xpath",
+          "markEl": false,
+          "timeout": 500,
+          "selector": "//div[@class='sidebar-footer']//div[contains(@class, 'footer-action-btn')]",
+          "tryCount": 1,
+          "throwError": false,
+          "description": "Thực thi element-exists",
+          "disableBlock": false
+        },
+        "type": "BlockElementExists",
+        "label": "element-exists",
+        "position": {
+          "x": -56.5033764390203,
+          "y": -225.6270538033332
+        },
+        "initialized": false
+      }
+    ],
+    "position": [
+      0,
+      0
+    ],
+    "viewport": {
+      "x": 0,
+      "y": 0,
+      "zoom": 1
+    }
+  },
+  "icon": "mdiPackageVariantClosed",
+  "name": "[check] Authenticate",
+  "inputs": [
+    {
+      "id": "qx80eug",
+      "name": "Input",
+      "blockId": "bxzcqxp",
+      "handleId": "bxzcqxp-input-1"
+    }
+  ],
+  "content": null,
+  "outputs": [
+    {
+      "id": "p2r0lkg",
+      "name": "True",
+      "blockId": "bxzcqxp",
+      "handleId": "bxzcqxp-output-1"
+    },
+    {
+      "id": "8fvl25e",
+      "name": "False",
+      "blockId": "bxzcqxp",
+      "handleId": "bxzcqxp-output-2"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "variable": [],
+  "isExtenal": false,
+  "description": "[check] Authenticate",
+  "updatedAt": 1784086566825
+}

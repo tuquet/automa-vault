@@ -1,0 +1,850 @@
+{
+  "id": "wf-capture-html-snapshots",
+  "name": "Capture HTML Snapshots",
+  "icon": "riGlobalLine",
+  "description": "Crawl HTML from all nav packages",
+  "table": [],
+  "content": null,
+  "trigger": {
+    "type": "manual",
+    "description": "Manual Trigger",
+    "parameters": [
+      {
+        "id": "g9aq7gr",
+        "name": "teamId",
+        "type": "string",
+        "defaultValue": "23",
+        "data": {
+          "required": true
+        }
+      },
+      {
+        "id": "5hbwiss",
+        "name": "employeeId",
+        "type": "string",
+        "defaultValue": "nvdat",
+        "data": {
+          "required": true
+        }
+      }
+    ]
+  },
+  "drawflow": {
+    "nodes": [
+      {
+        "id": "xw6dqlg",
+        "type": "BlockBasic",
+        "label": "trigger",
+        "data": {
+          "type": "manual",
+          "description": "Manual Trigger",
+          "parameters": [
+            {
+              "id": "g9aq7gr",
+              "name": "teamId",
+              "type": "string",
+              "defaultValue": "23",
+              "data": {
+                "required": true
+              }
+            },
+            {
+              "id": "5hbwiss",
+              "name": "employeeId",
+              "type": "string",
+              "defaultValue": "nvdat",
+              "data": {
+                "required": true
+              }
+            }
+          ],
+          "disableBlock": false,
+          "interval": 60,
+          "delay": 5,
+          "date": "",
+          "time": "00:00",
+          "url": "",
+          "shortcut": "",
+          "activeInInput": false,
+          "isUrlRegex": false,
+          "days": [],
+          "contextMenuName": "",
+          "contextTypes": [],
+          "preferParamsInTab": false,
+          "observeElement": {
+            "selector": "",
+            "baseSelector": "",
+            "matchPattern": "",
+            "targetOptions": {
+              "subtree": false,
+              "childList": true,
+              "attributes": false,
+              "attributeFilter": [],
+              "characterData": false
+            },
+            "baseElOptions": {
+              "subtree": false,
+              "childList": true,
+              "attributes": false,
+              "attributeFilter": [],
+              "characterData": false
+            }
+          }
+        },
+        "position": {
+          "x": 140,
+          "y": 90
+        }
+      },
+      {
+        "id": "ugcezjg",
+        "type": "BlockPackage",
+        "label": "block-package",
+        "data": {
+          "name": "[nav] Go to Codebook",
+          "inputs": [
+            {
+              "id": "cg5rwy0",
+              "name": "Input",
+              "blockId": "xnivval",
+              "handleId": "xnivval-input-1"
+            }
+          ],
+          "outputs": [
+            {
+              "id": "s4tte9w",
+              "name": "Output",
+              "blockId": "xnivval",
+              "handleId": "xnivval-output-1"
+            }
+          ],
+          "description": "Run Nav Package",
+          "data": {
+            "zoom": 1,
+            "edges": [],
+            "nodes": [
+              {
+                "id": "xnivval",
+                "data": {
+                  "url": "https://{{variables.$$getCodebookUrl}}",
+                  "active": true,
+                  "inGroup": false,
+                  "tabZoom": 1,
+                  "userAgent": "",
+                  "description": "new-tab",
+                  "disableBlock": false,
+                  "updatePrevTab": true,
+                  "waitTabLoaded": true,
+                  "customUserAgent": false
+                },
+                "type": "BlockBasic",
+                "label": "new-tab",
+                "position": {
+                  "x": 221,
+                  "y": -135
+                },
+                "initialized": false
+              }
+            ],
+            "position": [
+              489,
+              329
+            ],
+            "viewport": {
+              "x": 489,
+              "y": 329,
+              "zoom": 1
+            }
+          },
+          "icon": "riGlobalLine"
+        },
+        "position": {
+          "x": 520,
+          "y": 90
+        }
+      },
+      {
+        "id": "5mb3tb3",
+        "type": "BlockDelay",
+        "label": "delay",
+        "data": {
+          "time": 2000,
+          "description": "Wait for render",
+          "disableBlock": false
+        },
+        "position": {
+          "x": 900,
+          "y": 90
+        }
+      },
+      {
+        "id": "dqo8v3m",
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "data": {
+          "code": "const html = document.documentElement.outerHTML;\nconst url = window.location.href;\nfetch(automaRefData('variables', '$$supabaseUrl') + '/rest/v1/html_snapshots?on_conflict=nav_name', {\n  method: 'POST',\n  headers: {\n    'apikey': automaRefData('variables', '$$supabaseKey'),\n    'Authorization': 'Bearer ' + automaRefData('variables', '$$supabaseKey'),\n    'Content-Type': 'application/json',\n    'Prefer': 'return=representation,resolution=merge-duplicates'\n  },\n  body: JSON.stringify({\n    nav_name: 'Codebook',\n    url: url,\n    html_content: html\n  })\n}).then(async (res) => {\n  if (!res.ok) {\n    const err = await res.text();\n    console.error(\"Supabase Insert Error:\", err);\n  }\n  automaNextBlock();\n}).catch((e) => {\n  console.error(\"Fetch Error:\", e);\n  automaNextBlock();\n});",
+          "timeout": 10000,
+          "description": "Capture HTML",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "position": {
+          "x": 1280,
+          "y": 90
+        }
+      },
+      {
+        "id": "dthgluv",
+        "type": "BlockPackage",
+        "label": "block-package",
+        "data": {
+          "name": "[nav] Go to Employees",
+          "inputs": [
+            {
+              "id": "cg5rwy0",
+              "name": "Input",
+              "blockId": "xnivval",
+              "handleId": "xnivval-input-1"
+            }
+          ],
+          "outputs": [
+            {
+              "id": "s4tte9w",
+              "name": "Output",
+              "blockId": "xnivval",
+              "handleId": "xnivval-output-1"
+            }
+          ],
+          "description": "Run Nav Package",
+          "data": {
+            "zoom": 1,
+            "edges": [],
+            "nodes": [
+              {
+                "id": "xnivval",
+                "data": {
+                  "url": "https://{{variables.$$getEmployeesUrl}}",
+                  "active": true,
+                  "inGroup": false,
+                  "tabZoom": 1,
+                  "userAgent": "",
+                  "description": "new-tab",
+                  "disableBlock": false,
+                  "updatePrevTab": true,
+                  "waitTabLoaded": true,
+                  "customUserAgent": false
+                },
+                "type": "BlockBasic",
+                "label": "new-tab",
+                "position": {
+                  "x": 221,
+                  "y": -135
+                },
+                "initialized": false
+              }
+            ],
+            "position": [
+              489,
+              329
+            ],
+            "viewport": {
+              "x": 489,
+              "y": 329,
+              "zoom": 1
+            }
+          },
+          "icon": "riGlobalLine"
+        },
+        "position": {
+          "x": 1660,
+          "y": 90
+        }
+      },
+      {
+        "id": "20epa8c",
+        "type": "BlockDelay",
+        "label": "delay",
+        "data": {
+          "time": 2000,
+          "description": "Wait for render",
+          "disableBlock": false
+        },
+        "position": {
+          "x": 2040,
+          "y": 90
+        }
+      },
+      {
+        "id": "039wcsk",
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "data": {
+          "code": "const html = document.documentElement.outerHTML;\nconst url = window.location.href;\nfetch(automaRefData('variables', '$$supabaseUrl') + '/rest/v1/html_snapshots?on_conflict=nav_name', {\n  method: 'POST',\n  headers: {\n    'apikey': automaRefData('variables', '$$supabaseKey'),\n    'Authorization': 'Bearer ' + automaRefData('variables', '$$supabaseKey'),\n    'Content-Type': 'application/json',\n    'Prefer': 'return=representation,resolution=merge-duplicates'\n  },\n  body: JSON.stringify({\n    nav_name: 'Employees',\n    url: url,\n    html_content: html\n  })\n}).then(async (res) => {\n  if (!res.ok) {\n    const err = await res.text();\n    console.error(\"Supabase Insert Error:\", err);\n  }\n  automaNextBlock();\n}).catch((e) => {\n  console.error(\"Fetch Error:\", e);\n  automaNextBlock();\n});",
+          "timeout": 10000,
+          "description": "Capture HTML",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "position": {
+          "x": 2420,
+          "y": 90
+        }
+      },
+      {
+        "id": "f4vfrhk",
+        "type": "BlockPackage",
+        "label": "block-package",
+        "data": {
+          "name": "[nav] Go to Forbidden",
+          "inputs": [
+            {
+              "id": "cg5rwy0",
+              "name": "Input",
+              "blockId": "xnivval",
+              "handleId": "xnivval-input-1"
+            }
+          ],
+          "outputs": [
+            {
+              "id": "s4tte9w",
+              "name": "Output",
+              "blockId": "xnivval",
+              "handleId": "xnivval-output-1"
+            }
+          ],
+          "description": "Run Nav Package",
+          "data": {
+            "zoom": 1,
+            "edges": [],
+            "nodes": [
+              {
+                "id": "xnivval",
+                "data": {
+                  "url": "https://{{variables.$$getForbiddenUrl}}",
+                  "active": true,
+                  "inGroup": false,
+                  "tabZoom": 1,
+                  "userAgent": "",
+                  "description": "new-tab",
+                  "disableBlock": false,
+                  "updatePrevTab": true,
+                  "waitTabLoaded": true,
+                  "customUserAgent": false
+                },
+                "type": "BlockBasic",
+                "label": "new-tab",
+                "position": {
+                  "x": 221,
+                  "y": -135
+                },
+                "initialized": false
+              }
+            ],
+            "position": [
+              489,
+              329
+            ],
+            "viewport": {
+              "x": 489,
+              "y": 329,
+              "zoom": 1
+            }
+          },
+          "icon": "riGlobalLine"
+        },
+        "position": {
+          "x": 2800,
+          "y": 90
+        }
+      },
+      {
+        "id": "3f6xbyp",
+        "type": "BlockDelay",
+        "label": "delay",
+        "data": {
+          "time": 2000,
+          "description": "Wait for render",
+          "disableBlock": false
+        },
+        "position": {
+          "x": 3180,
+          "y": 90
+        }
+      },
+      {
+        "id": "t06zjvg",
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "data": {
+          "code": "const html = document.documentElement.outerHTML;\nconst url = window.location.href;\nfetch(automaRefData('variables', '$$supabaseUrl') + '/rest/v1/html_snapshots?on_conflict=nav_name', {\n  method: 'POST',\n  headers: {\n    'apikey': automaRefData('variables', '$$supabaseKey'),\n    'Authorization': 'Bearer ' + automaRefData('variables', '$$supabaseKey'),\n    'Content-Type': 'application/json',\n    'Prefer': 'return=representation,resolution=merge-duplicates'\n  },\n  body: JSON.stringify({\n    nav_name: 'Forbidden',\n    url: url,\n    html_content: html\n  })\n}).then(async (res) => {\n  if (!res.ok) {\n    const err = await res.text();\n    console.error(\"Supabase Insert Error:\", err);\n  }\n  automaNextBlock();\n}).catch((e) => {\n  console.error(\"Fetch Error:\", e);\n  automaNextBlock();\n});",
+          "timeout": 10000,
+          "description": "Capture HTML",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "position": {
+          "x": 3560,
+          "y": 90
+        }
+      },
+      {
+        "id": "g9n93r5",
+        "type": "BlockPackage",
+        "label": "block-package",
+        "data": {
+          "name": "[nav] Go to Sales Team",
+          "inputs": [
+            {
+              "id": "cg5rwy0",
+              "name": "Input",
+              "blockId": "xnivval",
+              "handleId": "xnivval-input-1"
+            }
+          ],
+          "outputs": [
+            {
+              "id": "s4tte9w",
+              "name": "Output",
+              "blockId": "xnivval",
+              "handleId": "xnivval-output-1"
+            }
+          ],
+          "description": "Run Nav Package",
+          "data": {
+            "zoom": 1,
+            "edges": [],
+            "nodes": [
+              {
+                "id": "xnivval",
+                "data": {
+                  "url": "https://{{variables.$$getSalesTeamUrl}}",
+                  "active": true,
+                  "inGroup": false,
+                  "tabZoom": 1,
+                  "userAgent": "",
+                  "description": "new-tab",
+                  "disableBlock": false,
+                  "updatePrevTab": true,
+                  "waitTabLoaded": true,
+                  "customUserAgent": false
+                },
+                "type": "BlockBasic",
+                "label": "new-tab",
+                "position": {
+                  "x": 221,
+                  "y": -135
+                },
+                "initialized": false
+              }
+            ],
+            "position": [
+              489,
+              329
+            ],
+            "viewport": {
+              "x": 489,
+              "y": 329,
+              "zoom": 1
+            }
+          },
+          "icon": "riGlobalLine"
+        },
+        "position": {
+          "x": 3940,
+          "y": 90
+        }
+      },
+      {
+        "id": "qtj3c3w",
+        "type": "BlockDelay",
+        "label": "delay",
+        "data": {
+          "time": 2000,
+          "description": "Wait for render",
+          "disableBlock": false
+        },
+        "position": {
+          "x": 4320,
+          "y": 90
+        }
+      },
+      {
+        "id": "ghzepk5",
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "data": {
+          "code": "const html = document.documentElement.outerHTML;\nconst url = window.location.href;\nfetch(automaRefData('variables', '$$supabaseUrl') + '/rest/v1/html_snapshots?on_conflict=nav_name', {\n  method: 'POST',\n  headers: {\n    'apikey': automaRefData('variables', '$$supabaseKey'),\n    'Authorization': 'Bearer ' + automaRefData('variables', '$$supabaseKey'),\n    'Content-Type': 'application/json',\n    'Prefer': 'return=representation,resolution=merge-duplicates'\n  },\n  body: JSON.stringify({\n    nav_name: 'Sales Team',\n    url: url,\n    html_content: html\n  })\n}).then(async (res) => {\n  if (!res.ok) {\n    const err = await res.text();\n    console.error(\"Supabase Insert Error:\", err);\n  }\n  automaNextBlock();\n}).catch((e) => {\n  console.error(\"Fetch Error:\", e);\n  automaNextBlock();\n});",
+          "timeout": 10000,
+          "description": "Capture HTML",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "position": {
+          "x": 4700,
+          "y": 90
+        }
+      },
+      {
+        "id": "5rsu91s",
+        "type": "BlockPackage",
+        "label": "block-package",
+        "data": {
+          "name": "[nav] Go to Team Detail",
+          "inputs": [
+            {
+              "id": "cg5rwy0",
+              "name": "Input",
+              "blockId": "xnivval",
+              "handleId": "xnivval-input-1"
+            }
+          ],
+          "outputs": [
+            {
+              "id": "s4tte9w",
+              "name": "Output",
+              "blockId": "xnivval",
+              "handleId": "xnivval-output-1"
+            }
+          ],
+          "description": "Run Nav Package",
+          "data": {
+            "zoom": 1,
+            "edges": [],
+            "nodes": [
+              {
+                "id": "xnivval",
+                "data": {
+                  "url": "https://{{variables.$$getTeamDetailBaseUrl}}{{variables.teamId}}",
+                  "active": true,
+                  "inGroup": false,
+                  "tabZoom": 1,
+                  "userAgent": "",
+                  "description": "new-tab",
+                  "disableBlock": false,
+                  "updatePrevTab": true,
+                  "waitTabLoaded": true,
+                  "customUserAgent": false
+                },
+                "type": "BlockBasic",
+                "label": "new-tab",
+                "position": {
+                  "x": 221,
+                  "y": -135
+                },
+                "initialized": false
+              }
+            ],
+            "position": [
+              489,
+              329
+            ],
+            "viewport": {
+              "x": 489,
+              "y": 329,
+              "zoom": 1
+            }
+          },
+          "icon": "riGlobalLine"
+        },
+        "position": {
+          "x": 5080,
+          "y": 90
+        }
+      },
+      {
+        "id": "615sx8q",
+        "type": "BlockDelay",
+        "label": "delay",
+        "data": {
+          "time": 2000,
+          "description": "Wait for render",
+          "disableBlock": false
+        },
+        "position": {
+          "x": 5460,
+          "y": 90
+        }
+      },
+      {
+        "id": "9kb04o8",
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "data": {
+          "code": "const html = document.documentElement.outerHTML;\nconst url = window.location.href;\nfetch(automaRefData('variables', '$$supabaseUrl') + '/rest/v1/html_snapshots?on_conflict=nav_name', {\n  method: 'POST',\n  headers: {\n    'apikey': automaRefData('variables', '$$supabaseKey'),\n    'Authorization': 'Bearer ' + automaRefData('variables', '$$supabaseKey'),\n    'Content-Type': 'application/json',\n    'Prefer': 'return=representation,resolution=merge-duplicates'\n  },\n  body: JSON.stringify({\n    nav_name: 'Team Detail',\n    url: url,\n    html_content: html\n  })\n}).then(async (res) => {\n  if (!res.ok) {\n    const err = await res.text();\n    console.error(\"Supabase Insert Error:\", err);\n  }\n  automaNextBlock();\n}).catch((e) => {\n  console.error(\"Fetch Error:\", e);\n  automaNextBlock();\n});",
+          "timeout": 10000,
+          "description": "Capture HTML",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "position": {
+          "x": 5840,
+          "y": 90
+        }
+      },
+      {
+        "id": "xwhtunc",
+        "type": "BlockPackage",
+        "label": "block-package",
+        "data": {
+          "name": "[nav] Go to Employee Detail",
+          "inputs": [
+            {
+              "id": "cg5rwy0",
+              "name": "Input",
+              "blockId": "xnivval",
+              "handleId": "xnivval-input-1"
+            }
+          ],
+          "outputs": [
+            {
+              "id": "s4tte9w",
+              "name": "Output",
+              "blockId": "xnivval",
+              "handleId": "xnivval-output-1"
+            }
+          ],
+          "description": "Run Nav Package",
+          "data": {
+            "zoom": 1,
+            "edges": [],
+            "nodes": [
+              {
+                "id": "xnivval",
+                "data": {
+                  "url": "https://{{variables.$$getEmployeeDetailBaseUrl}}{{variables.employeeId}}",
+                  "active": true,
+                  "inGroup": false,
+                  "tabZoom": 1,
+                  "userAgent": "",
+                  "description": "new-tab",
+                  "disableBlock": false,
+                  "updatePrevTab": true,
+                  "waitTabLoaded": true,
+                  "customUserAgent": false
+                },
+                "type": "BlockBasic",
+                "label": "new-tab",
+                "position": {
+                  "x": 221,
+                  "y": -135
+                },
+                "initialized": false
+              }
+            ],
+            "position": [
+              489,
+              329
+            ],
+            "viewport": {
+              "x": 489,
+              "y": 329,
+              "zoom": 1
+            }
+          },
+          "icon": "riGlobalLine"
+        },
+        "position": {
+          "x": 6220,
+          "y": 90
+        }
+      },
+      {
+        "id": "c6mzt7t",
+        "type": "BlockDelay",
+        "label": "delay",
+        "data": {
+          "time": 2000,
+          "description": "Wait for render",
+          "disableBlock": false
+        },
+        "position": {
+          "x": 6600,
+          "y": 90
+        }
+      },
+      {
+        "id": "u1izyn4",
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "data": {
+          "code": "const html = document.documentElement.outerHTML;\nconst url = window.location.href;\nfetch(automaRefData('variables', '$$supabaseUrl') + '/rest/v1/html_snapshots?on_conflict=nav_name', {\n  method: 'POST',\n  headers: {\n    'apikey': automaRefData('variables', '$$supabaseKey'),\n    'Authorization': 'Bearer ' + automaRefData('variables', '$$supabaseKey'),\n    'Content-Type': 'application/json',\n    'Prefer': 'return=representation,resolution=merge-duplicates'\n  },\n  body: JSON.stringify({\n    nav_name: 'Employee Detail',\n    url: url,\n    html_content: html\n  })\n}).then(async (res) => {\n  if (!res.ok) {\n    const err = await res.text();\n    console.error(\"Supabase Insert Error:\", err);\n  }\n  automaNextBlock();\n}).catch((e) => {\n  console.error(\"Fetch Error:\", e);\n  automaNextBlock();\n});",
+          "timeout": 10000,
+          "description": "Capture HTML",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "position": {
+          "x": 6980,
+          "y": 90
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge-xw6dqlg-ugcezjg",
+        "label": "Next",
+        "source": "xw6dqlg",
+        "target": "ugcezjg",
+        "sourceHandle": "xw6dqlg-output-1",
+        "targetHandle": "ugcezjg-input-cg5rwy0"
+      },
+      {
+        "id": "edge-ugcezjg-5mb3tb3",
+        "label": "Next",
+        "source": "ugcezjg",
+        "target": "5mb3tb3",
+        "sourceHandle": "ugcezjg-output-s4tte9w",
+        "targetHandle": "5mb3tb3-input-1"
+      },
+      {
+        "id": "edge-5mb3tb3-dqo8v3m",
+        "label": "Next",
+        "source": "5mb3tb3",
+        "target": "dqo8v3m",
+        "sourceHandle": "5mb3tb3-output-1",
+        "targetHandle": "dqo8v3m-input-1"
+      },
+      {
+        "id": "edge-dqo8v3m-dthgluv",
+        "label": "Next",
+        "source": "dqo8v3m",
+        "target": "dthgluv",
+        "sourceHandle": "dqo8v3m-output-1",
+        "targetHandle": "dthgluv-input-cg5rwy0"
+      },
+      {
+        "id": "edge-dthgluv-20epa8c",
+        "label": "Next",
+        "source": "dthgluv",
+        "target": "20epa8c",
+        "sourceHandle": "dthgluv-output-s4tte9w",
+        "targetHandle": "20epa8c-input-1"
+      },
+      {
+        "id": "edge-20epa8c-039wcsk",
+        "label": "Next",
+        "source": "20epa8c",
+        "target": "039wcsk",
+        "sourceHandle": "20epa8c-output-1",
+        "targetHandle": "039wcsk-input-1"
+      },
+      {
+        "id": "edge-039wcsk-f4vfrhk",
+        "label": "Next",
+        "source": "039wcsk",
+        "target": "f4vfrhk",
+        "sourceHandle": "039wcsk-output-1",
+        "targetHandle": "f4vfrhk-input-cg5rwy0"
+      },
+      {
+        "id": "edge-f4vfrhk-3f6xbyp",
+        "label": "Next",
+        "source": "f4vfrhk",
+        "target": "3f6xbyp",
+        "sourceHandle": "f4vfrhk-output-s4tte9w",
+        "targetHandle": "3f6xbyp-input-1"
+      },
+      {
+        "id": "edge-3f6xbyp-t06zjvg",
+        "label": "Next",
+        "source": "3f6xbyp",
+        "target": "t06zjvg",
+        "sourceHandle": "3f6xbyp-output-1",
+        "targetHandle": "t06zjvg-input-1"
+      },
+      {
+        "id": "edge-t06zjvg-g9n93r5",
+        "label": "Next",
+        "source": "t06zjvg",
+        "target": "g9n93r5",
+        "sourceHandle": "t06zjvg-output-1",
+        "targetHandle": "g9n93r5-input-cg5rwy0"
+      },
+      {
+        "id": "edge-g9n93r5-qtj3c3w",
+        "label": "Next",
+        "source": "g9n93r5",
+        "target": "qtj3c3w",
+        "sourceHandle": "g9n93r5-output-s4tte9w",
+        "targetHandle": "qtj3c3w-input-1"
+      },
+      {
+        "id": "edge-qtj3c3w-ghzepk5",
+        "label": "Next",
+        "source": "qtj3c3w",
+        "target": "ghzepk5",
+        "sourceHandle": "qtj3c3w-output-1",
+        "targetHandle": "ghzepk5-input-1"
+      },
+      {
+        "id": "edge-ghzepk5-5rsu91s",
+        "label": "Next",
+        "source": "ghzepk5",
+        "target": "5rsu91s",
+        "sourceHandle": "ghzepk5-output-1",
+        "targetHandle": "5rsu91s-input-cg5rwy0"
+      },
+      {
+        "id": "edge-5rsu91s-615sx8q",
+        "label": "Next",
+        "source": "5rsu91s",
+        "target": "615sx8q",
+        "sourceHandle": "5rsu91s-output-s4tte9w",
+        "targetHandle": "615sx8q-input-1"
+      },
+      {
+        "id": "edge-615sx8q-9kb04o8",
+        "label": "Next",
+        "source": "615sx8q",
+        "target": "9kb04o8",
+        "sourceHandle": "615sx8q-output-1",
+        "targetHandle": "9kb04o8-input-1"
+      },
+      {
+        "id": "edge-9kb04o8-xwhtunc",
+        "label": "Next",
+        "source": "9kb04o8",
+        "target": "xwhtunc",
+        "sourceHandle": "9kb04o8-output-1",
+        "targetHandle": "xwhtunc-input-cg5rwy0"
+      },
+      {
+        "id": "edge-xwhtunc-c6mzt7t",
+        "label": "Next",
+        "source": "xwhtunc",
+        "target": "c6mzt7t",
+        "sourceHandle": "xwhtunc-output-s4tte9w",
+        "targetHandle": "c6mzt7t-input-1"
+      },
+      {
+        "id": "edge-c6mzt7t-u1izyn4",
+        "label": "Next",
+        "source": "c6mzt7t",
+        "target": "u1izyn4",
+        "sourceHandle": "c6mzt7t-output-1",
+        "targetHandle": "u1izyn4-input-1"
+      }
+    ]
+  },
+  "version": "1.32.5",
+  "createdAt": 1784051386603,
+  "updatedAt": 1784086566656
+}

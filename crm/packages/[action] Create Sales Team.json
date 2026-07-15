@@ -1,0 +1,50 @@
+{
+  "id": "pkg-action-create-team",
+  "data": {
+    "edges": [],
+    "nodes": [
+      {
+        "id": "js_create_1",
+        "data": {
+          "code": "const variables = automaRefData('variables', '');\nconst teamName = variables.create_team_name;\n\ndocument.querySelector('[data-test-id=\"team-list-create-btn\"]')?.click();\n\nsetTimeout(() => {\n  const nameInput = document.querySelector('[data-test-id=\"team-create-name-input\"]');\n  if (nameInput) {\n    nameInput.value = teamName;\n    nameInput.dispatchEvent(new Event('input', { bubbles: true }));\n  }\n  \n  console.log('Automated form filled with JS for', teamName);\n  setTimeout(() => {\n    document.querySelector('[data-test-id=\"team-create-save-btn\"]')?.click();\n    automaNextBlock();\n  }, 500);\n}, 1000);",
+          "timeout": 10000,
+          "description": "Fill Ant Design Form using JS DOM Events",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 100,
+          "y": 100
+        }
+      }
+    ]
+  },
+  "icon": "riTeamLine",
+  "name": "[action] Create Sales Team",
+  "inputs": [
+    {
+      "id": "in_1",
+      "name": "start",
+      "blockId": "js_create_1",
+      "handleId": "js_create_1-input-1"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "out_1",
+      "name": "end",
+      "blockId": "js_create_1",
+      "handleId": "js_create_1-output-1"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "description": "Nhận Input -> Điền Form -> Bấm Lưu",
+  "updatedAt": 1784086566820
+}

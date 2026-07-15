@@ -1,0 +1,424 @@
+{
+  "id": "wf-employee-move-001",
+  "icon": "riShareLine",
+  "name": "Employee - Move",
+  "table": [],
+  "content": null,
+  "trigger": {
+    "url": "",
+    "date": "",
+    "days": [],
+    "time": "00:00",
+    "type": "manual",
+    "delay": 5,
+    "interval": 60,
+    "shortcut": "",
+    "isUrlRegex": false,
+    "parameters": [
+      {
+        "id": "11aa",
+        "data": {
+          "required": true
+        },
+        "name": "searchLdap",
+        "type": "string",
+        "description": "LDAP nhân viên cần chuyển",
+        "placeholder": "VD: nvhoa",
+        "defaultValue": "nvhoa"
+      },
+      {
+        "id": "22bb",
+        "data": {
+          "required": true
+        },
+        "name": "targetTeam",
+        "type": "string",
+        "description": "Tên Team muốn chuyển tới",
+        "placeholder": "VD: BU01",
+        "defaultValue": "BU01"
+      },
+      {
+        "id": "snap1",
+        "name": "snapshotName",
+        "type": "string",
+        "description": "Tên snapshot",
+        "defaultValue": "Employee Move Snapshot",
+        "data": {
+          "required": false
+        }
+      }
+    ],
+    "description": "Khởi tạo thông tin Move",
+    "contextTypes": [],
+    "disableBlock": false,
+    "activeInInput": false,
+    "observeElement": {
+      "baseElOptions": {},
+      "targetOptions": {}
+    },
+    "contextMenuName": "",
+    "preferParamsInTab": false
+  },
+  "version": "1.32.5",
+  "drawflow": {
+    "zoom": 1,
+    "edges": [
+      {
+        "id": "e1",
+        "type": "custom",
+        "label": "Trigger ➔ Tab",
+        "source": "n1",
+        "target": "n2",
+        "sourceHandle": "n1-output-1",
+        "targetHandle": "n2-input-1"
+      },
+      {
+        "id": "e2",
+        "type": "custom",
+        "label": "Tab ➔ Search Input",
+        "source": "n2",
+        "target": "n3",
+        "sourceHandle": "n2-output-1",
+        "targetHandle": "n3-input-1"
+      },
+      {
+        "id": "e3",
+        "type": "custom",
+        "label": "Search ➔ Delay",
+        "source": "n3",
+        "target": "n4",
+        "sourceHandle": "n3-output-1",
+        "targetHandle": "n4-input-1"
+      },
+      {
+        "id": "e4",
+        "type": "custom",
+        "label": "Delay ➔ Click Move",
+        "source": "n4",
+        "target": "n5",
+        "sourceHandle": "n4-output-1",
+        "targetHandle": "n5-input-1"
+      },
+      {
+        "id": "e5",
+        "type": "custom",
+        "label": "Click Move ➔ Delay 2",
+        "source": "n5",
+        "target": "n6",
+        "sourceHandle": "n5-output-1",
+        "targetHandle": "n6-input-1"
+      },
+      {
+        "id": "vueflow__edge-n6n6-output-1-wiuhc34wiuhc34-input-1",
+        "source": "n6",
+        "target": "wiuhc34",
+        "sourceHandle": "n6-output-1",
+        "targetHandle": "wiuhc34-input-1",
+        "updatable": true,
+        "data": {},
+        "type": "custom",
+        "label": "delay ➔ insert-data"
+      },
+      {
+        "id": "vueflow__edge-wiuhc34wiuhc34-output-1-z1wzrabz1wzrab-input-in_1",
+        "source": "wiuhc34",
+        "target": "z1wzrab",
+        "sourceHandle": "wiuhc34-output-1",
+        "targetHandle": "z1wzrab-input-in_1",
+        "updatable": true,
+        "data": {},
+        "type": "custom",
+        "label": "insert-data ➔ block-package"
+      },
+      {
+        "id": "vueflow__edge-z1wzrabz1wzrab-output-out_1-n7n7-input-1",
+        "source": "z1wzrab",
+        "target": "n7",
+        "sourceHandle": "z1wzrab-output-out_1",
+        "targetHandle": "n7-input-1",
+        "updatable": true,
+        "data": {},
+        "type": "custom",
+        "label": "block-package ➔ javascript-code"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "n1",
+        "data": {
+          "type": "manual",
+          "description": "Trigger Node",
+          "parameters": [
+            {
+              "id": "11aa",
+              "data": {
+                "required": true
+              },
+              "name": "searchLdap",
+              "type": "string",
+              "description": "LDAP nhân viên cần chuyển",
+              "placeholder": "VD: nvhoa",
+              "defaultValue": "nvhoa"
+            },
+            {
+              "id": "22bb",
+              "data": {
+                "required": true
+              },
+              "name": "targetTeam",
+              "type": "string",
+              "description": "Tên Team muốn chuyển tới",
+              "placeholder": "VD: BU01",
+              "defaultValue": "BU01"
+            },
+            {
+              "id": "snap1",
+              "name": "snapshotName",
+              "type": "string",
+              "description": "Tên snapshot",
+              "defaultValue": "Employee Move Snapshot",
+              "data": {
+                "required": false
+              }
+            }
+          ],
+          "disableBlock": false,
+          "interval": 60,
+          "delay": 5,
+          "date": "",
+          "time": "00:00",
+          "url": "",
+          "shortcut": "",
+          "activeInInput": false,
+          "isUrlRegex": false,
+          "days": [],
+          "contextMenuName": "",
+          "contextTypes": [],
+          "preferParamsInTab": false,
+          "observeElement": {
+            "selector": "",
+            "baseSelector": "",
+            "matchPattern": "",
+            "targetOptions": {
+              "subtree": false,
+              "childList": true,
+              "attributes": false,
+              "attributeFilter": [],
+              "characterData": false
+            },
+            "baseElOptions": {
+              "subtree": false,
+              "childList": true,
+              "attributes": false,
+              "attributeFilter": [],
+              "characterData": false
+            }
+          }
+        },
+        "type": "BlockBasic",
+        "label": "trigger",
+        "position": {
+          "x": 140,
+          "y": 90
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "url": "https://{{variables.$$getEmployeesUrl}}",
+          "active": true,
+          "description": "Mở trang Employees",
+          "disableBlock": false,
+          "userAgent": "",
+          "tabZoom": 1,
+          "inGroup": false,
+          "waitTabLoaded": false,
+          "updatePrevTab": false,
+          "customUserAgent": false
+        },
+        "type": "BlockBasic",
+        "label": "new-tab",
+        "position": {
+          "x": 520,
+          "y": 90
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "type": "text-field",
+          "delay": 100,
+          "value": "{{variables.searchLdap}}",
+          "selector": "[placeholder=\"Search name or LDAP...\"]",
+          "clearValue": true,
+          "description": "Nhập LDAP vào ô tìm kiếm",
+          "disableBlock": false,
+          "findBy": "cssSelector",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000,
+          "markEl": false,
+          "multiple": false,
+          "selected": true,
+          "getValue": false,
+          "saveData": false,
+          "dataColumn": "",
+          "selectOptionBy": "value",
+          "optionPosition": "1",
+          "assignVariable": false,
+          "variableName": "",
+          "events": []
+        },
+        "type": "BlockBasic",
+        "label": "forms",
+        "position": {
+          "x": 900,
+          "y": 90
+        }
+      },
+      {
+        "id": "n4",
+        "data": {
+          "time": "2000",
+          "description": "Chờ API Search",
+          "disableBlock": false
+        },
+        "type": "BlockDelay",
+        "label": "delay",
+        "position": {
+          "x": 1280,
+          "y": 90
+        }
+      },
+      {
+        "id": "n5",
+        "data": {
+          "selector": "//tr[@data-row-key='{{variables.searchLdap}}']//button[span[text()='Move']]",
+          "findBy": "xpath",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000,
+          "markEl": false,
+          "multiple": false,
+          "description": "Click nút Move trên bảng",
+          "disableBlock": false
+        },
+        "type": "BlockBasic",
+        "label": "event-click",
+        "position": {
+          "x": 1660,
+          "y": 90
+        }
+      },
+      {
+        "id": "n6",
+        "data": {
+          "time": "2500",
+          "description": "Chờ mở Drawer",
+          "disableBlock": false
+        },
+        "type": "BlockDelay",
+        "label": "delay",
+        "position": {
+          "x": 2040,
+          "y": 90
+        }
+      },
+      {
+        "id": "n7",
+        "data": {
+          "code": "(async () => {\n  const sleep = (ms) => new Promise(r => setTimeout(r, ms));\n  const simulateClick = (element) => {\n    if (!element) return;\n    element.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, cancelable: true, view: window }));\n    element.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window }));\n    element.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, cancelable: true, view: window }));\n    element.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window }));\n    element.click();\n  };\n  const simulateInput = (element, text) => {\n    element.focus();\n    const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, \"value\").set;\n    if (setter) setter.call(element, text);\n    else element.value = text;\n    element.dispatchEvent(new Event('input', { bubbles: true }));\n    element.dispatchEvent(new Event('change', { bubbles: true }));\n  };\n\n  try {\n    let targetTeam = '{{variables.targetTeam}}';\n\n    // 1. Chọn Team\n    const teamSelector = document.querySelector('[data-test-id=\"employee-move-team-select\"] .ant-select-selector');\n    const teamInput = document.querySelector('[data-test-id=\"employee-move-team-select\"] input');\n    if (teamSelector && teamInput) {\n      simulateClick(teamSelector);\n      await sleep(1000);\n      simulateInput(teamInput, targetTeam);\n      await sleep(1000);\n      const options = Array.from(document.querySelectorAll('.ant-select-dropdown:not(.ant-select-dropdown-hidden) .ant-select-item-option'));\n      const match = options.find(o => o.innerText.toLowerCase().includes(targetTeam.toLowerCase())) || options[0];\n      if (match) { \n        simulateClick(match); \n        await sleep(500); \n      }\n    }\n\n    // 2. Chọn Join Date (Today)\n    const dateInput = document.querySelector('.ant-picker-input input');\n    if (dateInput) {\n      simulateClick(dateInput);\n      await sleep(1000);\n      const todayBtn = document.querySelector('.ant-picker-today-btn');\n      if (todayBtn) { \n        simulateClick(todayBtn); \n        await sleep(500); \n      } else {\n        const today = new Date().toISOString().split('T')[0];\n        simulateInput(dateInput, today);\n        simulateClick(document.body);\n      }\n    }\n\n    // 3. Confirm\n    const confirmBtn = document.querySelector('[data-test-id=\"employee-move-submit-btn\"]');\n    if (confirmBtn && !confirmBtn.disabled) {\n      simulateClick(confirmBtn);\n      await sleep(1000);\n    } else {\n      console.warn(\"Nút Confirm bị disable hoặc không tìm thấy!\");\n    }\n\n  } catch (err) {\n    console.error(err);\n  }\n\n  setTimeout(() => automaNextBlock(), 1000);\n})();",
+          "timeout": 20000,
+          "description": "Điền form và Submit",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 3180,
+          "y": 90
+        }
+      },
+      {
+        "type": "BlockBasic",
+        "label": "insert-data",
+        "data": {
+          "description": "insert-data",
+          "disableBlock": false,
+          "dataList": [
+            {
+              "type": "variable",
+              "name": "snapshotName",
+              "value": "Drawer: Move Employee"
+            }
+          ]
+        },
+        "id": "wiuhc34",
+        "position": {
+          "x": 2420,
+          "y": 90
+        }
+      },
+      {
+        "type": "BlockPackage",
+        "label": "block-package",
+        "data": {
+          "id": "pkg-action-capture-html",
+          "name": "[action] Capture HTML to DB",
+          "description": "block-package",
+          "inputs": [
+            {
+              "id": "in_1",
+              "name": "start",
+              "blockId": "js_capture_html_1",
+              "handleId": "js_capture_html_1-input-1"
+            }
+          ],
+          "outputs": [
+            {
+              "id": "out_1",
+              "name": "end",
+              "blockId": "js_capture_html_1",
+              "handleId": "js_capture_html_1-output-1"
+            }
+          ],
+          "data": {
+            "edges": [],
+            "nodes": [
+              {
+                "id": "js_capture_html_1",
+                "data": {
+                  "code": "const html = document.documentElement.outerHTML;\nconst url = window.location.href;\n\n// Get snapshot name from Automa variable, fallback to document.title\nconst uniqueName = automaRefData('variables', 'snapshotName') || document.title;\n\nfetch(automaRefData('variables', '$$supabaseUrl') + '/rest/v1/html_snapshots?on_conflict=nav_name', {\n  method: 'POST',\n  headers: {\n    'apikey': automaRefData('variables', '$$supabaseKey'),\n    'Authorization': 'Bearer ' + automaRefData('variables', '$$supabaseKey'),\n    'Content-Type': 'application/json',\n    'Prefer': 'return=representation,resolution=merge-duplicates'\n  },\n  body: JSON.stringify({\n    nav_name: uniqueName,\n    url: url,\n    html_content: html\n  })\n}).then(async (res) => {\n  if (!res.ok) {\n    const err = await res.text();\n    console.error(\"Supabase Insert Error:\", err);\n  }\n  automaNextBlock();\n}).catch((e) => {\n  console.error(\"Fetch Error:\", e);\n  automaNextBlock();\n});",
+                  "timeout": 10000,
+                  "description": "Capture HTML Snapshot"
+                },
+                "type": "BlockBasic",
+                "label": "javascript-code",
+                "position": {
+                  "x": 100,
+                  "y": 100
+                }
+              }
+            ]
+          },
+          "icon": "riGlobalLine"
+        },
+        "id": "z1wzrab",
+        "position": {
+          "x": 2800,
+          "y": 90
+        }
+      }
+    ]
+  },
+  "settings": {
+    "onError": "stop-workflow",
+    "saveLog": true,
+    "debugMode": false
+  },
+  "isDisabled": false,
+  "description": "Workflow tự động chuyển team cho nhân viên",
+  "updatedAt": 1784086566658
+}

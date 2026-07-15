@@ -1,0 +1,50 @@
+{
+  "id": "pkg-scrape-sales-teams",
+  "data": {
+    "edges": [],
+    "nodes": [
+      {
+        "id": "js_1",
+        "data": {
+          "code": "const rows = Array.from(document.querySelectorAll('.ant-table-tbody > tr.ant-table-row'));\nconst data = rows.map(tr => {\n  const id = tr.getAttribute('data-row-key');\n  const name = tr.querySelector('td:nth-child(1) a')?.innerText.trim() || '';\n  const departmentCode = tr.querySelector('td:nth-child(2) span.font-mono:first-child')?.innerText.trim() || '';\n  const divisionCode = tr.querySelector('td:nth-child(2) span.font-mono:last-child')?.innerText.trim() || '';\n  const leaderName = tr.querySelector('td:nth-child(3) .text-slate-700')?.innerText.trim() || '';\n  const leaderLdap = tr.querySelector('td:nth-child(3) span.font-mono')?.innerText.trim() || '';\n  const status = tr.querySelector('td:nth-child(4) .pill')?.innerText.trim() || '';\n  const employeeCount = tr.querySelector('td:nth-child(5) span')?.innerText.trim() || '0';\n  return { id, name, departmentCode, divisionCode, leaderName, leaderLdap, status, employeeCount };\n}).filter(r => r.id);\nautomaSetVariable('scraped_sales_teams', data);\nautomaNextBlock({ teams: data });",
+          "timeout": 10000,
+          "description": "Extract data and assign to variable",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 200,
+          "y": 100
+        }
+      }
+    ]
+  },
+  "icon": "riFileListLine",
+  "name": "[scrape] Extract Sales Teams",
+  "inputs": [
+    {
+      "id": "in_1",
+      "name": "start",
+      "blockId": "js_1",
+      "handleId": "js_1-input-1"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "out_1",
+      "name": "end",
+      "blockId": "js_1",
+      "handleId": "js_1-output-1"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "description": "Quét bảng danh sách các Team hiện có và lưu vào biến toàn cục {{variables.scraped_sales_teams}}",
+  "updatedAt": 1784086566835
+}

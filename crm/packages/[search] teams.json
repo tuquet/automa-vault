@@ -1,0 +1,116 @@
+{
+  "id": "4HRS30Amt5zv8RXd5T38c",
+  "data": {
+    "zoom": 1.3,
+    "edges": [],
+    "nodes": [
+      {
+        "id": "iurfeo7",
+        "data": {
+          "type": "text-field",
+          "delay": 0,
+          "value": "",
+          "events": [],
+          "findBy": "cssSelector",
+          "markEl": false,
+          "getValue": false,
+          "multiple": false,
+          "saveData": false,
+          "selected": true,
+          "selector": "[data-test-id=\"team-list-advanced-search-switch\"]",
+          "clearValue": true,
+          "dataColumn": "",
+          "description": "Button Switch",
+          "disableBlock": false,
+          "variableName": "",
+          "assignVariable": false,
+          "optionPosition": "1",
+          "selectOptionBy": "value",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "forms",
+        "position": {
+          "x": 96,
+          "y": 36
+        },
+        "initialized": false
+      },
+      {
+        "id": "jqfr55r",
+        "data": {
+          "type": "text-field",
+          "delay": 0,
+          "value": "",
+          "events": [],
+          "findBy": "cssSelector",
+          "markEl": false,
+          "getValue": false,
+          "multiple": false,
+          "saveData": false,
+          "selected": true,
+          "selector": "input[data-test-id=\"team-list-search-input\"]",
+          "clearValue": true,
+          "dataColumn": "",
+          "description": "Search",
+          "disableBlock": false,
+          "variableName": "",
+          "assignVariable": false,
+          "optionPosition": "1",
+          "selectOptionBy": "value",
+          "waitForSelector": false,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "forms",
+        "position": {
+          "x": 96,
+          "y": 158
+        },
+        "initialized": false
+      },
+      {
+        "id": "0mzijvk",
+        "data": {
+          "findBy": "cssSelector",
+          "markEl": false,
+          "multiple": false,
+          "selector": "[data-test-id=\"team-list-advanced-search-switch\"]",
+          "description": "Thực thi event-click",
+          "disableBlock": false,
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "event-click",
+        "position": {
+          "x": 102.31302114633411,
+          "y": -79.23076923076923
+        },
+        "initialized": false
+      }
+    ],
+    "position": [
+      260,
+      363
+    ],
+    "viewport": {
+      "x": 260,
+      "y": 363,
+      "zoom": 1.3
+    }
+  },
+  "icon": "mdiPackageVariantClosed",
+  "name": "[search] teams",
+  "inputs": [],
+  "content": null,
+  "outputs": [],
+  "settings": {
+    "asBlock": false
+  },
+  "variable": [],
+  "isExtenal": false,
+  "description": "[search] teams",
+  "updatedAt": 1784086566836
+}

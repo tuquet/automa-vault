@@ -1,0 +1,50 @@
+{
+  "id": "pkg-action-add-codebook-property",
+  "data": {
+    "edges": [],
+    "nodes": [
+      {
+        "id": "js_add_prop_1",
+        "data": {
+          "code": "const variables = automaRefData('variables', '');\nconst newCode = variables.add_property_code;\nconst newName = variables.add_property_name;\n\nconst addBtn = Array.from(document.querySelectorAll('button')).find(b => b.innerText.includes('Add Value'));\nif (addBtn) addBtn.click();\n\nsetTimeout(() => {\n  const handles = document.querySelectorAll('.drag-handle');\n  const lastRow = handles[handles.length - 1]?.closest('.group');\n  if (lastRow) {\n    const inputs = lastRow.querySelectorAll('input');\n    if (inputs[0]) {\n      inputs[0].value = newCode;\n      inputs[0].dispatchEvent(new Event('input', { bubbles: true }));\n    }\n    if (inputs[1]) {\n      inputs[1].value = newName;\n      inputs[1].dispatchEvent(new Event('input', { bubbles: true }));\n    }\n  }\n  \n  const saveBtn = Array.from(document.querySelectorAll('button')).find(b => b.innerText.includes('Save') && !b.disabled);\n  if (saveBtn) saveBtn.click();\n  setTimeout(() => automaNextBlock(), 1000);\n}, 500);",
+          "timeout": 10000,
+          "description": "Add Property Logic",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 200,
+          "y": 100
+        }
+      }
+    ]
+  },
+  "icon": "riAddLine",
+  "name": "[action] Add Property",
+  "inputs": [
+    {
+      "id": "in_1",
+      "name": "start",
+      "blockId": "js_add_prop_1",
+      "handleId": "js_add_prop_1-input-1"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "out_1",
+      "name": "end",
+      "blockId": "js_add_prop_1",
+      "handleId": "js_add_prop_1-output-1"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "description": "Thêm giá trị danh mục mới dựa vào biến add_property_code và add_property_name",
+  "updatedAt": 1784086566818
+}

@@ -1,0 +1,50 @@
+{
+  "id": "pkg-scrape-employees",
+  "data": {
+    "edges": [],
+    "nodes": [
+      {
+        "id": "js_emp_1",
+        "data": {
+          "code": "const rows = Array.from(document.querySelectorAll('.employee-flat-table .ant-table-tbody > tr.ant-table-row'));\nconst data = rows.map(tr => {\n  const id = tr.getAttribute('data-row-key');\n  const name = tr.querySelector('td:nth-child(2) .text-slate-700')?.innerText.trim() || '';\n  const ldap = tr.querySelector('td:nth-child(2) span.font-mono')?.innerText.trim() || '';\n  const departmentCode = tr.querySelector('td:nth-child(3) span.font-mono:first-child')?.innerText.trim() || '';\n  const divisionCode = tr.querySelector('td:nth-child(3) span.font-mono:last-child')?.innerText.trim() || '';\n  const role = tr.querySelector('td:nth-child(4) .pill')?.innerText.trim() || '';\n  return { id, name, ldap, departmentCode, divisionCode, role };\n}).filter(r => r.id);\nautomaSetVariable('scraped_employees', data);\nautomaNextBlock({ employees: data });",
+          "timeout": 10000,
+          "description": "Extract Employee Data",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 200,
+          "y": 100
+        }
+      }
+    ]
+  },
+  "icon": "riFileListLine",
+  "name": "[scrape] Extract Employees",
+  "inputs": [
+    {
+      "id": "in_1",
+      "name": "start",
+      "blockId": "js_emp_1",
+      "handleId": "js_emp_1-input-1"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "out_1",
+      "name": "end",
+      "blockId": "js_emp_1",
+      "handleId": "js_emp_1-output-1"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "description": "Lấy danh sách nhân sự của một Team và lưu vào biến {{variables.scraped_employees}}",
+  "updatedAt": 1784086566834
+}

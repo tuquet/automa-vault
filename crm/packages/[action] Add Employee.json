@@ -1,0 +1,173 @@
+{
+  "id": "pkg-action-add-employee",
+  "data": {
+    "edges": [
+      {
+        "id": "vueflow__edge-js_open_drawerjs_open_drawer-output-1-insert_data_1insert_data_1-input-1",
+        "source": "js_open_drawer",
+        "target": "insert_data_1",
+        "sourceHandle": "js_open_drawer-output-1",
+        "targetHandle": "insert_data_1-input-1",
+        "updatable": true,
+        "data": {},
+        "type": "custom",
+        "label": "javascript-code ➔ insert-data"
+      },
+      {
+        "id": "vueflow__edge-insert_data_1insert_data_1-output-1-pkg_capture_1pkg_capture_1-input-in_1",
+        "source": "insert_data_1",
+        "target": "pkg_capture_1",
+        "sourceHandle": "insert_data_1-output-1",
+        "targetHandle": "pkg_capture_1-input-in_1",
+        "updatable": true,
+        "data": {},
+        "type": "custom",
+        "label": "insert-data ➔ block-package"
+      },
+      {
+        "id": "vueflow__edge-pkg_capture_1pkg_capture_1-output-out_1-js_fill_formjs_fill_form-input-1",
+        "source": "pkg_capture_1",
+        "target": "js_fill_form",
+        "sourceHandle": "pkg_capture_1-output-out_1",
+        "targetHandle": "js_fill_form-input-1",
+        "updatable": true,
+        "data": {},
+        "type": "custom",
+        "label": "block-package ➔ javascript-code"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "js_open_drawer",
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "data": {
+          "code": "const variables = automaRefData('variables', '');\nconst employeeLdap = variables.add_employee_ldap;\n\n// Click Add Member\nconst addMemberBtn = Array.from(document.querySelectorAll('button')).find(b => b.innerText.includes('Add Member'));\nif (addMemberBtn) addMemberBtn.click();\n\nsetTimeout(() => {\n  automaNextBlock();\n}, 1000);",
+          "timeout": 10000,
+          "description": "Click Add Member",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        }
+      },
+      {
+        "id": "insert_data_1",
+        "type": "BlockBasic",
+        "label": "insert-data",
+        "position": {
+          "x": 400,
+          "y": 100
+        },
+        "data": {
+          "description": "insert-data",
+          "disableBlock": false,
+          "dataList": [
+            {
+              "type": "variable",
+              "name": "snapshotName",
+              "value": "Drawer: Add Employee"
+            }
+          ]
+        }
+      },
+      {
+        "id": "pkg_capture_1",
+        "type": "BlockPackage",
+        "label": "block-package",
+        "position": {
+          "x": 700,
+          "y": 100
+        },
+        "data": {
+          "id": "pkg-action-capture-html",
+          "name": "[action] Capture HTML to DB",
+          "description": "block-package",
+          "inputs": [
+            {
+              "id": "in_1",
+              "name": "start",
+              "blockId": "js_capture_html_1",
+              "handleId": "js_capture_html_1-input-1"
+            }
+          ],
+          "outputs": [
+            {
+              "id": "out_1",
+              "name": "end",
+              "blockId": "js_capture_html_1",
+              "handleId": "js_capture_html_1-output-1"
+            }
+          ],
+          "data": {
+            "edges": [],
+            "nodes": [
+              {
+                "id": "js_capture_html_1",
+                "data": {
+                  "code": "const html = document.documentElement.outerHTML;\nconst url = window.location.href;\n\n// Get snapshot name from Automa variable, fallback to document.title\nconst uniqueName = automaRefData('variables', 'snapshotName') || document.title;\n\nfetch(automaRefData('variables', '$$supabaseUrl') + '/rest/v1/html_snapshots?on_conflict=nav_name', {\n  method: 'POST',\n  headers: {\n    'apikey': automaRefData('variables', '$$supabaseKey'),\n    'Authorization': 'Bearer ' + automaRefData('variables', '$$supabaseKey'),\n    'Content-Type': 'application/json',\n    'Prefer': 'return=representation,resolution=merge-duplicates'\n  },\n  body: JSON.stringify({\n    nav_name: uniqueName,\n    url: url,\n    html_content: html\n  })\n}).then(async (res) => {\n  if (!res.ok) {\n    const err = await res.text();\n    console.error(\"Supabase Insert Error:\", err);\n  }\n  automaNextBlock();\n}).catch((e) => {\n  console.error(\"Fetch Error:\", e);\n  automaNextBlock();\n});",
+                  "timeout": 10000,
+                  "description": "Capture HTML Snapshot"
+                },
+                "type": "BlockBasic",
+                "label": "javascript-code",
+                "position": {
+                  "x": 100,
+                  "y": 100
+                }
+              }
+            ]
+          },
+          "icon": "riGlobalLine"
+        }
+      },
+      {
+        "id": "js_fill_form",
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 1000,
+          "y": 100
+        },
+        "data": {
+          "code": "const variables = automaRefData('variables', '');\nconst employeeLdap = variables.add_employee_ldap;\nconsole.log('Automated form filled with JS for employee', employeeLdap);\n// Simulated flow for AntD Drawer\nsetTimeout(() => {\n  const addToTeamBtn = Array.from(document.querySelectorAll('button')).find(b => b.innerText.includes('Add to Team'));\n  if (addToTeamBtn) addToTeamBtn.click();\n  \n  setTimeout(() => {\n    const confirmBtn = Array.from(document.querySelectorAll('button')).find(b => b.innerText.includes('Confirm Add'));\n    if (confirmBtn) confirmBtn.click();\n    automaNextBlock();\n  }, 1000);\n}, 1000);",
+          "timeout": 10000,
+          "description": "Fill Form and Confirm",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        }
+      }
+    ]
+  },
+  "icon": "riUser3Line",
+  "name": "[action] Add Employee",
+  "inputs": [
+    {
+      "id": "in_1",
+      "name": "start",
+      "blockId": "js_open_drawer",
+      "handleId": "js_open_drawer-input-1"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "out_1",
+      "name": "end",
+      "blockId": "js_fill_form",
+      "handleId": "js_fill_form-output-1"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "description": "Thêm nhân viên mới vào hệ thống/team (Nhận biến add_employee_ldap, add_employee_join_date)",
+  "updatedAt": 1784086566817
+}

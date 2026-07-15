@@ -1,0 +1,63 @@
+{
+  "id": "pkg-nav-sales-team",
+  "data": {
+    "zoom": 1,
+    "edges": [],
+    "nodes": [
+      {
+        "id": "xnivval",
+        "data": {
+          "url": "https://{{variables.$$getSalesTeamUrl}}",
+          "active": true,
+          "inGroup": false,
+          "tabZoom": 1,
+          "userAgent": "",
+          "description": "new-tab",
+          "disableBlock": false,
+          "updatePrevTab": true,
+          "waitTabLoaded": true,
+          "customUserAgent": false
+        },
+        "type": "BlockBasic",
+        "label": "new-tab",
+        "position": {
+          "x": 221,
+          "y": -135
+        },
+        "initialized": false
+      }
+    ],
+    "position": [
+      489,
+      329
+    ],
+    "viewport": {
+      "x": 489,
+      "y": 329,
+      "zoom": 1
+    }
+  },
+  "icon": "riGroupLine",
+  "name": "[nav] Go to Sales Team",
+  "inputs": [
+    {
+      "id": "cg5rwy0",
+      "name": "Input",
+      "blockId": "xnivval",
+      "handleId": "xnivval-input-1"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "s4tte9w",
+      "name": "Output",
+      "blockId": "xnivval",
+      "handleId": "xnivval-output-1"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "description": "Chuyển hướng an toàn tới trang Sales Team Configuration",
+  "updatedAt": 1784086566831
+}

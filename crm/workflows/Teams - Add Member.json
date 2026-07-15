@@ -1,0 +1,790 @@
+{
+  "id": "OYsxwfjHwwlLjE9U9Gjv3",
+  "icon": "riGlobalLine",
+  "name": "Teams - Add Member",
+  "table": [],
+  "content": null,
+  "trigger": {
+    "url": "",
+    "date": "",
+    "days": [],
+    "time": "00:00",
+    "type": "manual",
+    "delay": 5,
+    "interval": 60,
+    "shortcut": "",
+    "isUrlRegex": false,
+    "parameters": [
+      {
+        "id": "9Ulr",
+        "data": {
+          "masks": [
+            {
+              "lazy": false,
+              "mask": "",
+              "isRegex": false
+            }
+          ],
+          "useMask": false,
+          "required": false,
+          "unmaskValue": false
+        },
+        "name": "searchQuery",
+        "type": "string",
+        "description": "",
+        "placeholder": "Keyword (e.g. team name)",
+        "defaultValue": "Team KPQPM 37"
+      },
+      {
+        "id": "jQdh",
+        "data": {
+          "required": false
+        },
+        "name": "isSearchAdvanced",
+        "type": "checkbox",
+        "description": "",
+        "placeholder": "Search Advanced",
+        "defaultValue": true
+      },
+      {
+        "id": "Y0P_",
+        "data": {
+          "masks": [
+            {
+              "lazy": false,
+              "mask": "",
+              "isRegex": false
+            }
+          ],
+          "useMask": false,
+          "required": false,
+          "unmaskValue": false
+        },
+        "name": "searchLdap",
+        "type": "string",
+        "description": "",
+        "placeholder": "Keyword (e.g. team nmthao)",
+        "defaultValue": "nmthao"
+      },
+      {
+        "data": {
+          "required": false
+        },
+        "name": "confirmOverlap",
+        "type": "checkbox",
+        "description": "",
+        "placeholder": "Overlap Member Add",
+        "defaultValue": ""
+      },
+      {
+        "id": "aEmp",
+        "data": {
+          "masks": [
+            {
+              "lazy": false,
+              "mask": "",
+              "isRegex": false
+            }
+          ],
+          "useMask": false,
+          "required": false,
+          "unmaskValue": false
+        },
+        "name": "addEmployeeLdap",
+        "type": "string",
+        "description": "Để trống sẽ chọn Random",
+        "placeholder": "Employee LDAP to Add",
+        "defaultValue": ""
+      },
+      {
+        "id": "expL",
+        "data": {
+          "required": false
+        },
+        "name": "fillExpectedLeaveDate",
+        "type": "checkbox",
+        "description": "Điền Expected Leave Date (Hôm nay)",
+        "placeholder": "Fill Leave Date",
+        "defaultValue": false
+      }
+    ],
+    "description": "trigger",
+    "contextTypes": [],
+    "disableBlock": false,
+    "activeInInput": false,
+    "observeElement": {
+      "selector": "",
+      "baseSelector": "",
+      "matchPattern": "",
+      "baseElOptions": {
+        "subtree": false,
+        "childList": true,
+        "attributes": false,
+        "characterData": false,
+        "attributeFilter": []
+      },
+      "targetOptions": {
+        "subtree": false,
+        "childList": true,
+        "attributes": false,
+        "characterData": false,
+        "attributeFilter": []
+      }
+    },
+    "contextMenuName": "",
+    "preferParamsInTab": false
+  },
+  "version": "1.32.5",
+  "drawflow": {
+    "zoom": 0.5223303379776747,
+    "edges": [
+      {
+        "id": "vueflow__edge-3mexm5u3mexm5u-output-1-8g1sr518g1sr51-input-1",
+        "data": {},
+        "type": "custom",
+        "label": "javascript-code ➔ conditions",
+        "source": "3mexm5u",
+        "target": "8g1sr51",
+        "sourceX": 1304.1424294682272,
+        "sourceY": 159.61032239169523,
+        "targetX": 1349.3931235433927,
+        "targetY": 170.14585625713656,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "3mexm5u-output-1",
+        "targetHandle": "8g1sr51-input-1"
+      },
+      {
+        "id": "vueflow__edge-t7FCIZvt7FCIZv-output-1-yDvyhXZyDvyhXZ-input-cg5rwy0",
+        "data": {},
+        "type": "custom",
+        "label": "active-tab -> block-package",
+        "source": "t7FCIZv",
+        "target": "yDvyhXZ",
+        "sourceX": 604.0001233954109,
+        "sourceY": 152.50000792722034,
+        "targetX": 671.5942448100205,
+        "targetY": 158.87978000195938,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "t7FCIZv-output-1",
+        "targetHandle": "yDvyhXZ-input-cg5rwy0"
+      },
+      {
+        "id": "vueflow__edge-yDvyhXZyDvyhXZ-output-s4tte9w-3mexm5u3mexm5u-input-1",
+        "data": {},
+        "type": "custom",
+        "label": "block-package -> javascript-code",
+        "source": "yDvyhXZ",
+        "target": "3mexm5u",
+        "sourceX": 977.5944354185378,
+        "sourceY": 158.87978000195938,
+        "targetX": 1064.1422491987494,
+        "targetY": 159.61032239169523,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "yDvyhXZ-output-s4tte9w",
+        "targetHandle": "3mexm5u-input-1"
+      },
+      {
+        "id": "vueflow__edge-3GuPmUl3GuPmUl-output-1-t7FCIZvt7FCIZv-input-1",
+        "data": {},
+        "type": "custom",
+        "label": "trigger -> active-tab",
+        "source": "3GuPmUl",
+        "target": "t7FCIZv",
+        "sourceX": 312.0001233954109,
+        "sourceY": 152.50000792722034,
+        "targetX": 363.9999431259333,
+        "targetY": 152.50000792722034,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "3GuPmUl-output-1",
+        "targetHandle": "t7FCIZv-input-1"
+      },
+      {
+        "id": "vueflow__edge-8g1sr518g1sr51-output-mDHo_cfvVPNxyVMS0J2qR-d98w7rrd98w7rr-input-1",
+        "data": {},
+        "type": "custom",
+        "label": "conditions -> forms",
+        "source": "8g1sr51",
+        "target": "d98w7rr",
+        "sourceX": 1654.3933556015504,
+        "sourceY": 218.73969356873795,
+        "targetX": 1744.9206565673328,
+        "targetY": 249.51759868535345,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "8g1sr51-output-mDHo_cfvVPNxyVMS0J2qR",
+        "targetHandle": "d98w7rr-input-1"
+      },
+      {
+        "id": "vueflow__edge-8g1sr518g1sr51-output-3jeY8Jyb181nrUHgOI9Wj-1e9097k1e9097k-input-1",
+        "data": {},
+        "type": "custom",
+        "label": "conditions -> forms",
+        "source": "8g1sr51",
+        "target": "1e9097k",
+        "sourceX": 1654.3933556015504,
+        "sourceY": 170.73957982060458,
+        "targetX": 1736.208207494473,
+        "targetY": 31.0607443571328,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "8g1sr51-output-3jeY8Jyb181nrUHgOI9Wj",
+        "targetHandle": "1e9097k-input-1"
+      },
+      {
+        "id": "vueflow__edge-1e9097k1e9097k-output-1-om7ik0rom7ik0r-input-1",
+        "data": {},
+        "type": "custom",
+        "label": "forms -> delay",
+        "source": "1e9097k",
+        "target": "om7ik0r",
+        "sourceX": 1976.2082709122358,
+        "sourceY": 31.0607443571328,
+        "targetX": 2125.7283789722296,
+        "targetY": 119.71159659062994,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "1e9097k-output-1",
+        "targetHandle": "om7ik0r-input-1"
+      },
+      {
+        "id": "vueflow__edge-d98w7rrd98w7rr-output-1-om7ik0rom7ik0r-input-1",
+        "data": {},
+        "type": "custom",
+        "label": "forms -> delay",
+        "source": "d98w7rr",
+        "target": "om7ik0r",
+        "sourceX": 1984.9208368368106,
+        "sourceY": 249.51759868535345,
+        "targetX": 2125.7283789722296,
+        "targetY": 119.71159659062994,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "d98w7rr-output-1",
+        "targetHandle": "om7ik0r-input-1"
+      },
+      {
+        "id": "vueflow__edge-om7ik0rom7ik0r-output-1-edwocy8edwocy8-input-1",
+        "data": {},
+        "type": "custom",
+        "label": "delay -> javascript-code",
+        "source": "om7ik0r",
+        "target": "edwocy8",
+        "sourceX": 2365.7284423899923,
+        "sourceY": 119.71159659062994,
+        "targetX": 2506.7133333795796,
+        "targetY": 127.74980623878378,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "om7ik0r-output-1",
+        "targetHandle": "edwocy8-input-1"
+      },
+      {
+        "id": "vueflow__edge-edwocy8edwocy8-output-1-5ojlfni5ojlfni-input-1",
+        "data": {},
+        "type": "custom",
+        "class": "connected-edges",
+        "label": "javascript-code -> javascript-code",
+        "source": "edwocy8",
+        "target": "5ojlfni",
+        "sourceX": 2746.7133967973423,
+        "sourceY": 127.74980623878378,
+        "targetX": 2939.389713761796,
+        "targetY": 125.83530898045538,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "edwocy8-output-1",
+        "targetHandle": "5ojlfni-input-1"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "3GuPmUl",
+        "data": {
+          "url": "",
+          "date": "",
+          "days": [],
+          "time": "00:00",
+          "type": "manual",
+          "delay": 5,
+          "interval": 60,
+          "shortcut": "",
+          "isUrlRegex": false,
+          "parameters": [
+            {
+              "id": "9Ulr",
+              "data": {
+                "masks": [
+                  {
+                    "lazy": false,
+                    "mask": "",
+                    "isRegex": false
+                  }
+                ],
+                "useMask": false,
+                "required": false,
+                "unmaskValue": false
+              },
+              "name": "searchQuery",
+              "type": "string",
+              "description": "",
+              "placeholder": "Keyword (e.g. team name)",
+              "defaultValue": "Team KPQPM 37"
+            },
+            {
+              "id": "jQdh",
+              "data": {
+                "required": false
+              },
+              "name": "isSearchAdvanced",
+              "type": "checkbox",
+              "description": "",
+              "placeholder": "Search Advanced",
+              "defaultValue": true
+            },
+            {
+              "id": "Y0P_",
+              "data": {
+                "masks": [
+                  {
+                    "lazy": false,
+                    "mask": "",
+                    "isRegex": false
+                  }
+                ],
+                "useMask": false,
+                "required": false,
+                "unmaskValue": false
+              },
+              "name": "searchLdap",
+              "type": "string",
+              "description": "",
+              "placeholder": "Keyword (e.g. team nmthao)",
+              "defaultValue": "nmthao"
+            },
+            {
+              "data": {
+                "required": false
+              },
+              "name": "confirmOverlap",
+              "type": "checkbox",
+              "description": "",
+              "placeholder": "Overlap Member Add",
+              "defaultValue": ""
+            },
+            {
+              "id": "aEmp",
+              "data": {
+                "masks": [
+                  {
+                    "lazy": false,
+                    "mask": "",
+                    "isRegex": false
+                  }
+                ],
+                "useMask": false,
+                "required": false,
+                "unmaskValue": false
+              },
+              "name": "addEmployeeLdap",
+              "type": "string",
+              "description": "Để trống sẽ chọn Random",
+              "placeholder": "Employee LDAP to Add",
+              "defaultValue": ""
+            },
+            {
+              "id": "expL",
+              "data": {
+                "required": false
+              },
+              "name": "fillExpectedLeaveDate",
+              "type": "checkbox",
+              "description": "Điền Expected Leave Date (Hôm nay)",
+              "placeholder": "Fill Leave Date",
+              "defaultValue": false
+            }
+          ],
+          "description": "trigger",
+          "contextTypes": [],
+          "disableBlock": false,
+          "activeInInput": false,
+          "observeElement": {
+            "selector": "",
+            "baseSelector": "",
+            "matchPattern": "",
+            "baseElOptions": {
+              "subtree": false,
+              "childList": true,
+              "attributes": false,
+              "characterData": false,
+              "attributeFilter": []
+            },
+            "targetOptions": {
+              "subtree": false,
+              "childList": true,
+              "attributes": false,
+              "characterData": false,
+              "attributeFilter": []
+            }
+          },
+          "contextMenuName": "",
+          "preferParamsInTab": false
+        },
+        "type": "BlockBasic",
+        "label": "trigger",
+        "position": {
+          "x": 140,
+          "y": 205
+        },
+        "initialized": false
+      },
+      {
+        "id": "8g1sr51",
+        "data": {
+          "conditions": [
+            {
+              "id": "3jeY8Jyb181nrUHgOI9Wj",
+              "name": "True",
+              "conditions": [
+                {
+                  "id": "CeS1LXLw97JmRFOKis5Nz",
+                  "conditions": [
+                    {
+                      "id": "wkFTYotvYWqrZorSUDIVs",
+                      "items": [
+                        {
+                          "id": "im2J2ARHr_Os3u9-2Apgg",
+                          "data": {
+                            "value": "{{variables.isSearchAdvanced}}"
+                          },
+                          "type": "value",
+                          "category": "value"
+                        },
+                        {
+                          "id": "KRQ4AQ9yDAiNl37k0T6sj",
+                          "type": "itr",
+                          "category": "compare"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "mDHo_cfvVPNxyVMS0J2qR",
+              "name": "False",
+              "conditions": [
+                {
+                  "id": "N6Bfs9Bdfg41ZRBtGMvzF",
+                  "conditions": [
+                    {
+                      "id": "AKvBH0zzwasMpUfiJvtgr",
+                      "items": [
+                        {
+                          "id": "cMaXq6OXL7avxWC7tSUo-",
+                          "data": {
+                            "selector": "[data-test-id=\"team-list-advanced-search-switch\"][aria-checked=\"false\"]"
+                          },
+                          "type": "element#exists",
+                          "category": "value"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "retryCount": 10,
+          "description": "isSearchAdvanced",
+          "disableBlock": false,
+          "retryTimeout": 1000,
+          "retryConditions": false
+        },
+        "type": "BlockConditions",
+        "label": "conditions",
+        "position": {
+          "x": 1660,
+          "y": 205
+        },
+        "initialized": false
+      },
+      {
+        "id": "1e9097k",
+        "data": {
+          "type": "text-field",
+          "delay": "50",
+          "value": "{{variables.searchLdap}}",
+          "events": [],
+          "findBy": "cssSelector",
+          "markEl": false,
+          "getValue": false,
+          "multiple": false,
+          "saveData": false,
+          "selected": true,
+          "selector": "[data-test-id=\"team-list-multi-ldap-input\"]",
+          "clearValue": true,
+          "dataColumn": "",
+          "description": "Tìm Kiếm",
+          "disableBlock": false,
+          "variableName": "",
+          "assignVariable": false,
+          "optionPosition": "1",
+          "selectOptionBy": "value",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "forms",
+        "position": {
+          "x": 2040,
+          "y": 90
+        },
+        "initialized": false
+      },
+      {
+        "id": "3mexm5u",
+        "data": {
+          "code": "const simulateClick = (element) => {\n  if (!element) return;\n  // Bắn thêm PointerEvent để tương thích tốt nhất với các UI Framework hiện đại\n  element.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, cancelable: true, view: window }));\n  element.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window }));\n  element.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, cancelable: true, view: window }));\n  element.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window }));\n  element.click();\n};\n\nlet retries = 0;\nconst maxRetries = 10;\n\nconst checkAndClick = setInterval(() => {\n  const switchBtn = document.querySelector('[data-test-id=\"team-list-advanced-search-switch\"]');\n  \n  if (switchBtn) {\n    clearInterval(checkAndClick);\n    \n    // 1. Lấy biến an toàn qua hàm chuẩn của Automa (tránh lỗi render string)\n    let isSearchAdvanced = false;\n    try {\n      const val = automaRefData('variables', 'isSearchAdvanced');\n      isSearchAdvanced = (val === true || val === 'true');\n    } catch(e) {\n      // Fallback\n      isSearchAdvanced = (`{{variables.isSearchAdvanced}}` === 'true');\n    }\n\n    const isCurrentlyChecked = switchBtn.getAttribute('aria-checked') === 'true';\n    \n    // 2. So sánh state để click\n    if (isSearchAdvanced && !isCurrentlyChecked) {\n      simulateClick(switchBtn);\n    } else if (!isSearchAdvanced && isCurrentlyChecked) {\n      simulateClick(switchBtn);\n    }\n\n    // 3. Chờ 500ms để React/Vue cập nhật DOM (aria-checked) rồi mới đi sang node Conditions\n    setTimeout(() => {\n      automaNextBlock();\n    }, 500);\n\n  } else if (retries >= maxRetries) {\n    clearInterval(checkAndClick);\n    console.error(\"Timeout: Cannot find advanced search switch\");\n    automaNextBlock(); // Vẫn next để luồng không bị kẹt\n  }\n  retries++;\n}, 500);",
+          "context": "website",
+          "timeout": 20000,
+          "description": "javascript-code",
+          "everyNewTab": false,
+          "disableBlock": false,
+          "runBeforeLoad": false,
+          "preloadScripts": []
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 1280,
+          "y": 205
+        },
+        "initialized": false
+      },
+      {
+        "id": "d98w7rr",
+        "data": {
+          "type": "text-field",
+          "delay": "50",
+          "value": "{{variables.searchQuery}}",
+          "events": [],
+          "findBy": "cssSelector",
+          "markEl": false,
+          "getValue": false,
+          "multiple": false,
+          "saveData": false,
+          "selected": true,
+          "selector": "[data-test-id=\"team-list-search-input\"]",
+          "clearValue": true,
+          "dataColumn": "",
+          "description": "Tìm Kiếm",
+          "disableBlock": false,
+          "variableName": "",
+          "assignVariable": false,
+          "optionPosition": "1",
+          "selectOptionBy": "value",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "forms",
+        "position": {
+          "x": 2040,
+          "y": 320
+        },
+        "initialized": false
+      },
+      {
+        "id": "t7FCIZv",
+        "data": {
+          "activeTabBy": "last-active",
+          "description": "active-tab",
+          "disableBlock": false
+        },
+        "type": "BlockBasic",
+        "label": "active-tab",
+        "position": {
+          "x": 520,
+          "y": 205
+        },
+        "initialized": false
+      },
+      {
+        "id": "yDvyhXZ",
+        "data": {
+          "id": "pkg-nav-sales-team",
+          "data": {
+            "zoom": 1,
+            "edges": [],
+            "nodes": [
+              {
+                "id": "xnivval",
+                "data": {
+                  "url": "https://{{variables.$$getSalesTeamUrl}}",
+                  "active": true,
+                  "inGroup": false,
+                  "tabZoom": 1,
+                  "userAgent": "",
+                  "description": "new-tab",
+                  "disableBlock": false,
+                  "updatePrevTab": true,
+                  "waitTabLoaded": true,
+                  "customUserAgent": false
+                },
+                "type": "BlockBasic",
+                "label": "new-tab",
+                "position": {
+                  "x": 221,
+                  "y": -135
+                },
+                "initialized": false
+              }
+            ],
+            "position": [
+              489,
+              329
+            ],
+            "viewport": {
+              "x": 489,
+              "y": 329,
+              "zoom": 1
+            }
+          },
+          "icon": "riGroupLine",
+          "name": "[nav] Go to Sales Team",
+          "inputs": [
+            {
+              "id": "cg5rwy0",
+              "name": "Input",
+              "blockId": "xnivval",
+              "handleId": "xnivval-input-1"
+            }
+          ],
+          "outputs": [
+            {
+              "id": "s4tte9w",
+              "name": "Output",
+              "blockId": "xnivval",
+              "handleId": "xnivval-output-1"
+            }
+          ],
+          "settings": {
+            "asBlock": true
+          },
+          "updatedAt": 1784044455293,
+          "description": "Chuyển hướng an toàn tới trang Sales Team Configuration"
+        },
+        "type": "BlockPackage",
+        "label": "block-package",
+        "position": {
+          "x": 900,
+          "y": 205
+        },
+        "initialized": false
+      },
+      {
+        "id": "om7ik0r",
+        "data": {
+          "time": "1500",
+          "description": "delay",
+          "disableBlock": false
+        },
+        "type": "BlockDelay",
+        "label": "delay",
+        "position": {
+          "x": 2420,
+          "y": 205
+        },
+        "initialized": false
+      },
+      {
+        "id": "edwocy8",
+        "data": {
+          "code": "const simulateClick = (element) => {\n  if (!element) return;\n  // Giả lập thao tác click chuột như người thật để qua mặt React/Vue\n  element.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, cancelable: true, view: window }));\n  element.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window }));\n  element.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, cancelable: true, view: window }));\n  element.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window }));\n  element.click();\n};\n\nlet retries = 0;\nconst maxRetries = 20; // Sẽ chờ tối đa 10 giây (20 lần x 500ms) để API search trả về\n\nconst checkAndClickAdd = setInterval(() => {\n  // 1. Lấy biến LDAP cần tìm\n  let targetLdap = '';\n  try {\n    targetLdap = automaRefData('variables', 'searchLdap') || '';\n  } catch(e) {\n    targetLdap = `{{variables.searchLdap}}`;\n  }\n  \n  targetLdap = targetLdap.trim().toLowerCase();\n  \n  if (!targetLdap || targetLdap.includes('{{')) {\n     clearInterval(checkAndClickAdd);\n     console.error(\"Lỗi: Biến searchLdap rỗng hoặc chưa được gán giá trị!\");\n     automaNextBlock();\n     return;\n  }\n\n  // 2. Tìm tất cả các dòng dữ liệu trong bảng hiện tại\n  const rows = document.querySelectorAll('tr.ant-table-row');\n  let clicked = false;\n  \n  for (let row of rows) {\n    // 3. Tìm các thẻ span trong dòng. Nếu text chứa đúng LDAP cần tìm thì xác định là Match\n    const spans = row.querySelectorAll('span');\n    let isMatch = false;\n    \n    for (let span of spans) {\n      if (span.innerText && span.innerText.trim().toLowerCase() === targetLdap) {\n        isMatch = true;\n        break;\n      }\n    }\n    \n    // Nếu đúng dòng của người cần tìm\n    if (isMatch) {\n      // 4. Tìm nút có chữ \"Add\" trong dòng đó và Click\n      const buttons = row.querySelectorAll('button');\n      for (let btn of buttons) {\n        if (btn.innerText && btn.innerText.includes('Add')) {\n          simulateClick(btn);\n          clicked = true;\n          break;\n        }\n      }\n    }\n    \n    if (clicked) break; // Thoát vòng lặp các dòng nếu đã click\n  }\n  \n  // 5. Xử lý sau khi duyệt bảng\n  if (clicked) {\n    clearInterval(checkAndClickAdd);\n    // Chờ 500ms cho UI xử lý hiệu ứng Click/API rồi cho luồng Automa đi tiếp\n    setTimeout(() => {\n      automaNextBlock();\n    }, 500);\n  } else if (retries >= maxRetries) {\n    clearInterval(checkAndClickAdd);\n    console.error(`Timeout: Đã chờ 10s nhưng API chưa load ra người có LDAP là '${targetLdap}', hoặc nút Add bị ẩn.`);\n    automaNextBlock(); // Hết thời gian thì bỏ qua để luồng không bị kẹt\n  }\n  \n  retries++;\n}, 500);",
+          "context": "website",
+          "timeout": 20000,
+          "description": "javascript-code",
+          "everyNewTab": false,
+          "disableBlock": false,
+          "runBeforeLoad": false,
+          "preloadScripts": []
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 2800,
+          "y": 205
+        },
+        "initialized": false
+      },
+      {
+        "id": "5ojlfni",
+        "data": {
+          "code": "(async () => {\n  const sleep = (ms) => new Promise(r => setTimeout(r, ms));\n  const simulateClick = (element) => {\n    if (!element) return;\n    element.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, cancelable: true, view: window }));\n    element.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window }));\n    element.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, cancelable: true, view: window }));\n    element.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window }));\n    element.click();\n  };\n  const simulateInput = (element, text) => {\n    element.focus();\n    const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, \"value\").set;\n    if (setter) setter.call(element, text);\n    else element.value = text;\n    element.dispatchEvent(new Event('input', { bubbles: true }));\n  };\n  const waitForOptions = async (maxRetries = 20) => {\n    for (let i = 0; i < maxRetries; i++) {\n      const options = document.querySelectorAll('.ant-select-dropdown:not(.ant-select-dropdown-hidden) .ant-select-item-option');\n      if (options.length > 0) return Array.from(options);\n      await sleep(500);\n    }\n    return [];\n  };\n\n  try {\n    let targetLdap = '';\n    try { targetLdap = automaRefData('variables', 'addEmployeeLdap') || ''; } \n    catch(e) { targetLdap = `{{variables.addEmployeeLdap}}`; }\n    if (targetLdap.includes('{{')) targetLdap = '';\n    targetLdap = targetLdap.trim().toLowerCase();\n\n    const selector = document.querySelector('.ant-drawer .ant-select-selector');\n    const searchInput = document.querySelector('.ant-drawer .ant-select-selection-search-input');\n    if (!selector || !searchInput) {\n      console.error(\"[QC Automa] Lỗi: Không tìm thấy ô Select Employee trong Drawer\");\n      return automaNextBlock({ $error: true });\n    }\n\n    simulateClick(selector);\n    let options = await waitForOptions();\n    options = options.filter(opt => !opt.classList.contains('ant-select-item-option-disabled') && !opt.getAttribute('aria-disabled'));\n\n    let matchOption = null;\n    if (targetLdap !== '') {\n      simulateInput(searchInput, targetLdap);\n      await sleep(1000);\n      options = await waitForOptions();\n      options = options.filter(opt => !opt.classList.contains('ant-select-item-option-disabled') && !opt.getAttribute('aria-disabled'));\n      for (let opt of options) {\n        const text = (opt.innerText || opt.textContent).toLowerCase();\n        if (text.includes(targetLdap)) {\n          matchOption = opt;\n          break;\n        }\n      }\n    }\n    if (!matchOption && options.length > 0) {\n      matchOption = options[Math.floor(Math.random() * options.length)];\n    }\n\n    if (matchOption) {\n      simulateClick(matchOption); \n      await sleep(500); \n    } else {\n      console.error(\"[QC Automa] Lỗi: Không có bất kỳ option nào khả dụng để chọn.\");\n      return automaNextBlock({ $error: true });\n    }\n\n\n    // --- XỬ LÝ DATE PICKERS ---\n    // 1. Join Date (Bắt buộc)\n    const dateInputs = document.querySelectorAll('.ant-picker-input input[placeholder=\"Select date\"]');\n    if (dateInputs.length > 0) {\n      simulateClick(dateInputs[0]); // Join Date\n      await sleep(500);\n      const todayBtn = document.querySelector('.ant-picker-today-btn');\n      if (todayBtn) { simulateClick(todayBtn); await sleep(500); }\n    }\n\n    // 2. Expected Leave Date (Tùy chọn)\n    let fillLeave = false;\n    try { fillLeave = automaRefData('variables', 'fillExpectedLeaveDate') === true || automaRefData('variables', 'fillExpectedLeaveDate') === 'true'; } \n    catch(e) { fillLeave = `{{variables.fillExpectedLeaveDate}}` === 'true'; }\n    \n    if (fillLeave && dateInputs.length > 1) {\n      simulateClick(dateInputs[1]); // Expected Leave Date\n      await sleep(500);\n      const todayBtn = document.querySelector('.ant-picker-today-btn');\n      if (todayBtn) { simulateClick(todayBtn); await sleep(500); }\n    }\n    // -------------------------\n\n\n    // Click nút Add to Team dưới chân Drawer\n    const addBtn = document.querySelector('.ant-drawer-footer .ant-btn-primary');\n    if (addBtn) simulateClick(addBtn);\n\n    await sleep(1000); // Chờ Dialog Confirm (Overlap)\n    const modalConfirm = document.querySelector('.ant-modal-content');\n    if (modalConfirm) {\n      let forceMove = false;\n      try { forceMove = automaRefData('variables', 'confirmOverlap') === true || automaRefData('variables', 'confirmOverlap') === 'true'; } \n      catch(e) { forceMove = `{{variables.confirmOverlap}}` === 'true'; }\n      if (forceMove) {\n        const confirmBtn = modalConfirm.querySelector('.ant-modal-footer .ant-btn-primary');\n        if (confirmBtn) simulateClick(confirmBtn);\n      } else {\n        const cancelBtn = modalConfirm.querySelector('.ant-modal-footer .ant-btn-default');\n        if (cancelBtn) simulateClick(cancelBtn);\n      }\n    }\n  } catch (error) {\n    console.error(\"[QC Automa] Lỗi script:\", error);\n    return automaNextBlock({ $error: true });\n  }\n\n  setTimeout(() => automaNextBlock(), 500);\n})();",
+          "context": "website",
+          "timeout": 20000,
+          "description": "javascript-code",
+          "everyNewTab": false,
+          "disableBlock": false,
+          "runBeforeLoad": false,
+          "preloadScripts": []
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 3180,
+          "y": 205
+        },
+        "initialized": false
+      }
+    ],
+    "position": [
+      -847.868319420618,
+      612.0762968385376
+    ],
+    "viewport": {
+      "x": -847.868319420618,
+      "y": 612.0762968385376,
+      "zoom": 0.5223303379776747
+    }
+  },
+  "folderId": null,
+  "settings": {
+    "onError": "stop-workflow",
+    "saveLog": true,
+    "publicId": "",
+    "debugMode": false,
+    "blockDelay": 0,
+    "execContext": "popup",
+    "aipowerToken": "",
+    "notification": true,
+    "restartTimes": 3,
+    "reuseLastState": false,
+    "defaultColumnName": "column",
+    "inputAutocomplete": true,
+    "executedBlockOnWeb": false,
+    "insertDefaultColumn": false
+  },
+  "extVersion": "1.32.5",
+  "globalData": "{\n\t\"key\": \"value\"\n}",
+  "isDisabled": false,
+  "dataColumns": [],
+  "description": "Search",
+  "connectedTable": null,
+  "updatedAt": 1784086566661
+}

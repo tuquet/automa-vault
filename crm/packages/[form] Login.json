@@ -1,0 +1,519 @@
+{
+  "id": "jzZa_ycRZs8XGsrz-HJwg",
+  "data": {
+    "zoom": 0.7969099341807228,
+    "edges": [
+      {
+        "id": "vueflow__edge-ztfsncrztfsncr-output-1-l1o7z41l1o7z41-input-1",
+        "data": {},
+        "type": "custom",
+        "label": "Next",
+        "source": "ztfsncr",
+        "target": "l1o7z41",
+        "sourceX": 312.0000238960093,
+        "sourceY": 72.00000286675521,
+        "targetX": 363.99998181452423,
+        "targetY": 72.00000286675521,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "ztfsncr-output-1",
+        "targetHandle": "l1o7z41-input-1"
+      },
+      {
+        "id": "vueflow__edge-l1o7z41l1o7z41-output-1-t9czy8it9czy8i-input-1",
+        "data": {},
+        "type": "custom",
+        "label": "Next",
+        "source": "l1o7z41",
+        "target": "t9czy8i",
+        "sourceX": 603.999947306236,
+        "sourceY": 72.00000286675521,
+        "targetX": 655.9999818145242,
+        "targetY": 72.00000286675521,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "l1o7z41-output-1",
+        "targetHandle": "t9czy8i-input-1"
+      },
+      {
+        "id": "edge-ypwkg8v",
+        "data": {},
+        "type": "custom",
+        "label": "Next",
+        "source": "2l9u25c",
+        "target": "ybefqlt",
+        "sourceX": 312.0000238960093,
+        "sourceY": 193.99999568646396,
+        "targetX": 363.99998181452423,
+        "targetY": 193.99999568646396,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "2l9u25c-output-1",
+        "targetHandle": "ybefqlt-input-1"
+      },
+      {
+        "id": "edge-1h7x7ec",
+        "data": {},
+        "type": "custom",
+        "label": "Next",
+        "source": "ybefqlt",
+        "target": "4m5l40a",
+        "sourceX": 603.999947306236,
+        "sourceY": 193.99999568646396,
+        "targetX": 655.9999818145242,
+        "targetY": 193.99999568646396,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "ybefqlt-output-1",
+        "targetHandle": "4m5l40a-input-1"
+      },
+      {
+        "id": "edge-kw1tora",
+        "data": {},
+        "type": "custom",
+        "label": "Next",
+        "source": "domb4vi",
+        "target": "os0s3te",
+        "sourceX": 319.3351893152609,
+        "sourceY": 307.99719011525656,
+        "targetX": 371.3352621184358,
+        "targetY": 307.99719011525656,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "domb4vi-output-1",
+        "targetHandle": "os0s3te-input-1"
+      },
+      {
+        "id": "edge-bvxvrdv",
+        "data": {},
+        "type": "custom",
+        "label": "Next",
+        "source": "os0s3te",
+        "target": "ft0rn1l",
+        "sourceX": 611.3352276101475,
+        "sourceY": 307.99719011525656,
+        "targetX": 663.3351089388892,
+        "targetY": 307.99719011525656,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "os0s3te-output-1",
+        "targetHandle": "ft0rn1l-input-1"
+      },
+      {
+        "id": "vueflow__edge-t9czy8it9czy8i-output-1-rqfub13rqfub13-input-1",
+        "data": {},
+        "type": "custom",
+        "class": "source-t9czy8i-output-1 target-rqfub13-input-1",
+        "label": "Next",
+        "source": "t9czy8i",
+        "target": "rqfub13",
+        "sourceX": 895.999947306236,
+        "sourceY": 72.00000286675521,
+        "targetX": 982.7159594708642,
+        "targetY": 169.0893257491423,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "t9czy8i-output-1",
+        "targetHandle": "rqfub13-input-1"
+      },
+      {
+        "id": "vueflow__edge-4m5l40a4m5l40a-output-1-rqfub13rqfub13-input-1",
+        "data": {},
+        "type": "custom",
+        "class": "source-4m5l40a-output-1 target-rqfub13-input-1",
+        "label": "Next",
+        "source": "4m5l40a",
+        "target": "rqfub13",
+        "sourceX": 895.999947306236,
+        "sourceY": 193.99999568646396,
+        "targetX": 982.7159594708642,
+        "targetY": 169.0893257491423,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "4m5l40a-output-1",
+        "targetHandle": "rqfub13-input-1"
+      },
+      {
+        "id": "vueflow__edge-ft0rn1lft0rn1l-output-1-rqfub13rqfub13-input-1",
+        "data": {},
+        "type": "custom",
+        "class": "source-ft0rn1l-output-1 target-rqfub13-input-1",
+        "label": "Next",
+        "source": "ft0rn1l",
+        "target": "rqfub13",
+        "sourceX": 903.3350744306009,
+        "sourceY": 307.99719011525656,
+        "targetX": 982.7159594708642,
+        "targetY": 169.0893257491423,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "ft0rn1l-output-1",
+        "targetHandle": "rqfub13-input-1"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "ztfsncr",
+        "data": {
+          "type": "text-field",
+          "delay": 100,
+          "value": "{{variables.loginUsername}}",
+          "events": [],
+          "findBy": "xpath",
+          "markEl": false,
+          "getValue": false,
+          "multiple": false,
+          "saveData": false,
+          "selected": true,
+          "selector": "//input[contains(@id, 'username')]",
+          "clearValue": true,
+          "dataColumn": "",
+          "description": "Nhập tài khoản",
+          "disableBlock": false,
+          "variableName": "",
+          "assignVariable": false,
+          "optionPosition": "1",
+          "selectOptionBy": "value",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "forms",
+        "position": {
+          "x": 96,
+          "y": 36
+        },
+        "initialized": false
+      },
+      {
+        "id": "l1o7z41",
+        "data": {
+          "type": "text-field",
+          "delay": 100,
+          "value": "{{variables.loginPassword}}",
+          "events": [],
+          "findBy": "xpath",
+          "markEl": false,
+          "getValue": false,
+          "multiple": false,
+          "saveData": false,
+          "selected": true,
+          "selector": "//input[@type='password']",
+          "clearValue": true,
+          "dataColumn": "",
+          "description": "Nhập mật khẩu",
+          "disableBlock": false,
+          "variableName": "",
+          "assignVariable": false,
+          "optionPosition": "1",
+          "selectOptionBy": "value",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "forms",
+        "position": {
+          "x": 388,
+          "y": 36
+        },
+        "initialized": false
+      },
+      {
+        "id": "t9czy8i",
+        "data": {
+          "code": "automaNextBlock();\nsetTimeout(() => {\n  document.querySelector(\"button[data-test-id='auth-login-submit-btn']\")?.click();\n}, 500);",
+          "timeout": 10000,
+          "description": "Login Click (JS Fix)",
+          "everyNewTab": false,
+          "disableBlock": false,
+          "runBeforeLoad": false,
+          "preloadScripts": [],
+          "context": "website"
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 680,
+          "y": 36
+        },
+        "initialized": false
+      },
+      {
+        "id": "2l9u25c",
+        "data": {
+          "type": "text-field",
+          "delay": 100,
+          "value": "{{variables.loginUsername}}",
+          "events": [],
+          "findBy": "xpath",
+          "markEl": false,
+          "getValue": false,
+          "multiple": false,
+          "saveData": false,
+          "selected": true,
+          "selector": "//input[contains(@id, 'username')]",
+          "clearValue": true,
+          "dataColumn": "",
+          "description": "Nhập tài khoản",
+          "disableBlock": false,
+          "variableName": "",
+          "assignVariable": false,
+          "optionPosition": "1",
+          "selectOptionBy": "value",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "forms",
+        "position": {
+          "x": 96,
+          "y": 158
+        },
+        "initialized": false
+      },
+      {
+        "id": "ybefqlt",
+        "data": {
+          "type": "text-field",
+          "delay": 100,
+          "value": "{{variables.loginPassword}}",
+          "events": [],
+          "findBy": "xpath",
+          "markEl": false,
+          "getValue": false,
+          "multiple": false,
+          "saveData": false,
+          "selected": true,
+          "selector": "//input[@type='password']",
+          "clearValue": true,
+          "dataColumn": "",
+          "description": "Nhập mật khẩu",
+          "disableBlock": false,
+          "variableName": "",
+          "assignVariable": false,
+          "optionPosition": "1",
+          "selectOptionBy": "value",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "forms",
+        "position": {
+          "x": 388,
+          "y": 158
+        },
+        "initialized": false
+      },
+      {
+        "id": "4m5l40a",
+        "data": {
+          "code": "automaNextBlock();\nsetTimeout(() => {\n  document.querySelector(\"button[data-test-id='auth-login-submit-btn']\")?.click();\n}, 500);",
+          "timeout": 10000,
+          "description": "Login Click (JS Fix)",
+          "everyNewTab": false,
+          "disableBlock": false,
+          "runBeforeLoad": false,
+          "preloadScripts": [],
+          "context": "website"
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 680,
+          "y": 158
+        },
+        "initialized": false
+      },
+      {
+        "id": "domb4vi",
+        "data": {
+          "type": "text-field",
+          "delay": 100,
+          "value": "{{variables.loginUsername}}",
+          "events": [],
+          "findBy": "xpath",
+          "markEl": false,
+          "getValue": false,
+          "multiple": false,
+          "saveData": false,
+          "selected": true,
+          "selector": "//input[contains(@id, 'username')]",
+          "clearValue": true,
+          "dataColumn": "",
+          "description": "Nhập tài khoản",
+          "disableBlock": false,
+          "variableName": "",
+          "assignVariable": false,
+          "optionPosition": "1",
+          "selectOptionBy": "value",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "forms",
+        "position": {
+          "x": 103.33520371413829,
+          "y": 271.99719442879257
+        },
+        "initialized": false
+      },
+      {
+        "id": "os0s3te",
+        "data": {
+          "type": "text-field",
+          "delay": 100,
+          "value": "{{variables.loginPassword}}",
+          "events": [],
+          "findBy": "xpath",
+          "markEl": false,
+          "getValue": false,
+          "multiple": false,
+          "saveData": false,
+          "selected": true,
+          "selector": "//input[@type='password']",
+          "clearValue": true,
+          "dataColumn": "",
+          "description": "Nhập mật khẩu",
+          "disableBlock": false,
+          "variableName": "",
+          "assignVariable": false,
+          "optionPosition": "1",
+          "selectOptionBy": "value",
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "forms",
+        "position": {
+          "x": 395.3352037141383,
+          "y": 271.99719442879257
+        },
+        "initialized": false
+      },
+      {
+        "id": "ft0rn1l",
+        "data": {
+          "code": "automaNextBlock();\nsetTimeout(() => {\n  document.querySelector(\"button[data-test-id='auth-login-submit-btn']\")?.click();\n}, 500);",
+          "timeout": 10000,
+          "description": "Login Click (JS Fix)",
+          "everyNewTab": false,
+          "disableBlock": false,
+          "runBeforeLoad": false,
+          "preloadScripts": [],
+          "context": "website"
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 687.3352037141383,
+          "y": 271.99719442879257
+        },
+        "initialized": false
+      },
+      {
+        "id": "mivbqom",
+        "data": {
+          "note": "Tài liệu SRS",
+          "color": "white",
+          "width": 280,
+          "height": 168,
+          "drawing": false,
+          "fontSize": "regular",
+          "description": "Thực thi note",
+          "disableBlock": false
+        },
+        "type": "BlockNote",
+        "label": "note",
+        "position": {
+          "x": 76.3888080559363,
+          "y": 369.3954941940598
+        },
+        "initialized": false
+      },
+      {
+        "id": "rqfub13",
+        "data": {
+          "time": "1000",
+          "description": "Thực thi delay",
+          "disableBlock": false
+        },
+        "type": "BlockDelay",
+        "label": "delay",
+        "position": {
+          "x": 1006.7161308358866,
+          "y": 110.6726522608798
+        },
+        "initialized": false
+      }
+    ],
+    "position": [
+      -241,
+      180
+    ],
+    "viewport": {
+      "x": -241,
+      "y": 180,
+      "zoom": 0.7969099341807228
+    }
+  },
+  "icon": "mdiPackageVariantClosed",
+  "name": "[form] Login",
+  "inputs": [
+    {
+      "id": "1sdmaeh",
+      "name": "valid",
+      "blockId": "2l9u25c",
+      "handleId": "2l9u25c-input-1"
+    },
+    {
+      "id": "8e8flfz",
+      "name": "invalid_credentials",
+      "blockId": "ztfsncr",
+      "handleId": "ztfsncr-input-1"
+    },
+    {
+      "id": "rqnyih0",
+      "name": "invalid_regex",
+      "blockId": "domb4vi",
+      "handleId": "domb4vi-input-1"
+    }
+  ],
+  "asBlock": false,
+  "content": null,
+  "outputs": [
+    {
+      "id": "jz0n8o1",
+      "name": "200",
+      "blockId": "4m5l40a",
+      "handleId": "4m5l40a-output-1"
+    },
+    {
+      "id": "7w7p5wz",
+      "name": "401",
+      "blockId": "t9czy8i",
+      "handleId": "t9czy8i-output-1"
+    },
+    {
+      "id": "n6xfepe",
+      "name": "400",
+      "blockId": "ft0rn1l",
+      "handleId": "ft0rn1l-output-1"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "variable": [],
+  "isExtenal": false,
+  "description": "Sử dụng global data input form",
+  "updatedAt": 1784086566826
+}

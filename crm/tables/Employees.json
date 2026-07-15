@@ -1,0 +1,32 @@
+{
+  "id": "t_employees",
+  "name": "Employees",
+  "columns": [
+    {
+      "id": "col_username",
+      "name": "Username",
+      "type": "string"
+    },
+    {
+      "id": "col_role",
+      "name": "Role",
+      "type": "string"
+    },
+    {
+      "id": "col_employee",
+      "name": "Employee",
+      "type": "string"
+    },
+    {
+      "id": "col_name",
+      "name": "Name",
+      "type": "string"
+    },
+    {
+      "id": "col_leads",
+      "name": "Leads",
+      "type": "string"
+    }
+  ],
+  "is_deleted": false
+}

@@ -1,0 +1,599 @@
+{
+  "id": "dsXTlpTAvQLKX-3XnRCuv",
+  "icon": "riGlobalLine",
+  "name": "Teams - Create",
+  "table": [],
+  "content": null,
+  "trigger": {
+    "url": "",
+    "date": "",
+    "days": [],
+    "time": "00:00",
+    "type": "manual",
+    "delay": 5,
+    "interval": 60,
+    "shortcut": "",
+    "isUrlRegex": false,
+    "parameters": [
+      {
+        "id": "ep8I",
+        "data": {
+          "masks": [
+            {
+              "lazy": false,
+              "mask": "",
+              "isRegex": false
+            }
+          ],
+          "useMask": false,
+          "required": false,
+          "unmaskValue": false
+        },
+        "name": "teamName",
+        "type": "string",
+        "description": "",
+        "placeholder": "Random if empty",
+        "defaultValue": ""
+      },
+      {
+        "id": "mzTZ",
+        "data": {
+          "masks": [
+            {
+              "lazy": false,
+              "mask": "",
+              "isRegex": false
+            }
+          ],
+          "useMask": false,
+          "required": false,
+          "unmaskValue": false
+        },
+        "name": "division",
+        "type": "string",
+        "description": "",
+        "placeholder": "Random if empty",
+        "defaultValue": ""
+      },
+      {
+        "id": "VcV1",
+        "data": {
+          "masks": [
+            {
+              "lazy": false,
+              "mask": "",
+              "isRegex": false
+            }
+          ],
+          "useMask": false,
+          "required": false,
+          "unmaskValue": false
+        },
+        "name": "unit",
+        "type": "string",
+        "description": "",
+        "placeholder": "Random if empty",
+        "defaultValue": ""
+      },
+      {
+        "id": "ZAuW",
+        "data": {
+          "masks": [
+            {
+              "lazy": false,
+              "mask": "",
+              "isRegex": false
+            }
+          ],
+          "useMask": false,
+          "required": false,
+          "unmaskValue": false
+        },
+        "name": "market",
+        "type": "string",
+        "description": "",
+        "placeholder": "Random if empty",
+        "defaultValue": ""
+      },
+      {
+        "id": "3GQh",
+        "data": {
+          "masks": [
+            {
+              "lazy": false,
+              "mask": "",
+              "isRegex": false
+            }
+          ],
+          "useMask": false,
+          "required": false,
+          "unmaskValue": false
+        },
+        "name": "leader",
+        "type": "string",
+        "description": "",
+        "placeholder": "Random if empty",
+        "defaultValue": ""
+      }
+    ],
+    "description": "trigger",
+    "contextTypes": [],
+    "disableBlock": false,
+    "activeInInput": false,
+    "observeElement": {
+      "selector": "",
+      "baseSelector": "",
+      "matchPattern": "",
+      "baseElOptions": {
+        "subtree": false,
+        "childList": true,
+        "attributes": false,
+        "characterData": false,
+        "attributeFilter": []
+      },
+      "targetOptions": {
+        "subtree": false,
+        "childList": true,
+        "attributes": false,
+        "characterData": false,
+        "attributeFilter": []
+      }
+    },
+    "contextMenuName": "",
+    "preferParamsInTab": false
+  },
+  "version": "1.32.5",
+  "drawflow": {
+    "zoom": 0.8924632352941176,
+    "edges": [
+      {
+        "id": "vueflow__edge-l11runbl11runb-output-aj5gw60-1c64vqr1c64vqr-input-zfzbit4",
+        "data": {},
+        "type": "custom",
+        "class": "connected-edges",
+        "label": "block-package ➔ block-package",
+        "source": "l11runb",
+        "target": "1c64vqr",
+        "sourceX": 701.0002200653546,
+        "sourceY": 153.68753275731274,
+        "targetX": 750.9998683369673,
+        "targetY": 173.68754544827976,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "l11runb-output-aj5gw60",
+        "targetHandle": "1c64vqr-input-zfzbit4"
+      },
+      {
+        "id": "vueflow__edge-kar9kbskar9kbs-output-1-l11runbl11runb-input-10eti2o",
+        "data": {},
+        "type": "custom",
+        "class": "connected-edges",
+        "label": "Add Member ➔ Form",
+        "source": "kar9kbs",
+        "target": "l11runb",
+        "sourceX": 312.00003107574685,
+        "sourceY": 104.50002096181791,
+        "targetX": 394.99999611553164,
+        "targetY": 153.68753275731274,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "kar9kbs-output-1",
+        "targetHandle": "l11runb-input-10eti2o"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "kar9kbs",
+        "data": {
+          "url": "",
+          "date": "",
+          "days": [],
+          "time": "00:00",
+          "type": "manual",
+          "delay": 5,
+          "interval": 60,
+          "shortcut": "",
+          "isUrlRegex": false,
+          "parameters": [
+            {
+              "id": "ep8I",
+              "data": {
+                "masks": [
+                  {
+                    "lazy": false,
+                    "mask": "",
+                    "isRegex": false
+                  }
+                ],
+                "useMask": false,
+                "required": false,
+                "unmaskValue": false
+              },
+              "name": "teamName",
+              "type": "string",
+              "description": "",
+              "placeholder": "Random if empty",
+              "defaultValue": ""
+            },
+            {
+              "id": "mzTZ",
+              "data": {
+                "masks": [
+                  {
+                    "lazy": false,
+                    "mask": "",
+                    "isRegex": false
+                  }
+                ],
+                "useMask": false,
+                "required": false,
+                "unmaskValue": false
+              },
+              "name": "division",
+              "type": "string",
+              "description": "",
+              "placeholder": "Random if empty",
+              "defaultValue": ""
+            },
+            {
+              "id": "VcV1",
+              "data": {
+                "masks": [
+                  {
+                    "lazy": false,
+                    "mask": "",
+                    "isRegex": false
+                  }
+                ],
+                "useMask": false,
+                "required": false,
+                "unmaskValue": false
+              },
+              "name": "unit",
+              "type": "string",
+              "description": "",
+              "placeholder": "Random if empty",
+              "defaultValue": ""
+            },
+            {
+              "id": "ZAuW",
+              "data": {
+                "masks": [
+                  {
+                    "lazy": false,
+                    "mask": "",
+                    "isRegex": false
+                  }
+                ],
+                "useMask": false,
+                "required": false,
+                "unmaskValue": false
+              },
+              "name": "market",
+              "type": "string",
+              "description": "",
+              "placeholder": "Random if empty",
+              "defaultValue": ""
+            },
+            {
+              "id": "3GQh",
+              "data": {
+                "masks": [
+                  {
+                    "lazy": false,
+                    "mask": "",
+                    "isRegex": false
+                  }
+                ],
+                "useMask": false,
+                "required": false,
+                "unmaskValue": false
+              },
+              "name": "leader",
+              "type": "string",
+              "description": "",
+              "placeholder": "Random if empty",
+              "defaultValue": ""
+            }
+          ],
+          "description": "trigger",
+          "contextTypes": [],
+          "disableBlock": false,
+          "activeInInput": false,
+          "observeElement": {
+            "selector": "",
+            "baseSelector": "",
+            "matchPattern": "",
+            "baseElOptions": {
+              "subtree": false,
+              "childList": true,
+              "attributes": false,
+              "characterData": false,
+              "attributeFilter": []
+            },
+            "targetOptions": {
+              "subtree": false,
+              "childList": true,
+              "attributes": false,
+              "characterData": false,
+              "attributeFilter": []
+            }
+          },
+          "contextMenuName": "",
+          "preferParamsInTab": false
+        },
+        "type": "BlockBasic",
+        "label": "trigger",
+        "position": {
+          "x": 140,
+          "y": 90
+        },
+        "initialized": false
+      },
+      {
+        "id": "1c64vqr",
+        "data": {
+          "id": "0enxnGKgE6isgWxg5BUVL",
+          "data": {
+            "zoom": 1,
+            "edges": [
+              {
+                "id": "edge-ec1s5fj",
+                "data": {},
+                "type": "custom",
+                "label": "javascript-code -> event-click",
+                "source": "8rdid11",
+                "target": "9cvgcad",
+                "sourceX": 900.4068776591346,
+                "sourceY": -16.182885158492482,
+                "targetX": 952.4253102763221,
+                "targetY": -16.182885158492482,
+                "markerEnd": "arrowclosed",
+                "updatable": true,
+                "selectable": true,
+                "sourceHandle": "8rdid11-output-1",
+                "targetHandle": "9cvgcad-input-1"
+              },
+              {
+                "id": "vueflow__edge-b1lyhfgb1lyhfg-output-1-8rdid118rdid11-input-1",
+                "data": {},
+                "type": "custom",
+                "class": "connected-edges",
+                "label": "event-click -> javascript-code",
+                "source": "b1lyhfg",
+                "target": "8rdid11",
+                "sourceX": 608.4069386942908,
+                "sourceY": -16.182885158492482,
+                "targetX": 660.4253713114783,
+                "targetY": -16.182885158492482,
+                "markerEnd": "arrowclosed",
+                "updatable": true,
+                "selectable": true,
+                "sourceHandle": "b1lyhfg-output-1",
+                "targetHandle": "8rdid11-input-1"
+              }
+            ],
+            "nodes": [
+              {
+                "id": "8rdid11",
+                "data": {
+                  "code": "(async () => {\n  const sleep = (ms) => new Promise(r => setTimeout(r, ms));\n\n  const simulateClick = (element) => {\n    if (!element) return;\n    element.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, cancelable: true, view: window }));\n    element.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window }));\n    element.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, cancelable: true, view: window }));\n    element.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window }));\n    element.click();\n  };\n\n  const simulateInput = (element, text) => {\n    if (!element) return;\n    element.focus();\n    const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, \"value\").set;\n    if (nativeInputValueSetter) {\n      nativeInputValueSetter.call(element, text);\n    } else {\n      element.value = text;\n    }\n    element.dispatchEvent(new Event('input', { bubbles: true }));\n  };\n\n  const getSelect = (id) => {\n    const input = document.querySelector(`#${id}`);\n    return input ? input.closest('.ant-select').querySelector('.ant-select-selector') : null;\n  };\n\n  const selectOption = async (id, targetValue, maxRetries = 20) => {\n    const selector = getSelect(id);\n    if (!selector) {\n      console.log(`[QC Automa] Not found selector for ${id}`);\n      return;\n    }\n\n    // Mở dropdown\n    simulateClick(selector);\n    await sleep(300);\n\n    // Gõ text vào ô search nếu có targetValue để kích hoạt API search\n    if (targetValue && targetValue.trim() !== '') {\n      const searchInput = selector.parentElement.querySelector('.ant-select-selection-search-input');\n      if (searchInput) {\n        simulateInput(searchInput, targetValue.trim());\n        await sleep(1000); // Chờ API\n      }\n    }\n\n    // Chờ Dropdown load xong\n    let options = [];\n    for (let i = 0; i < maxRetries; i++) {\n      const dropdownContainer = document.querySelector(`#${id}_list`)?.closest('.ant-select-dropdown');\n      if (dropdownContainer) {\n        const found = Array.from(dropdownContainer.querySelectorAll('.ant-select-item-option'))\n          .filter(opt => !opt.classList.contains('ant-select-item-option-disabled') && !opt.getAttribute('aria-disabled'));\n        if (found.length > 0) {\n          options = found;\n          break;\n        }\n      }\n      await sleep(500);\n    }\n\n    if (options.length === 0) {\n      console.error(`[QC Automa] Timeout waiting for select option in ${id}`);\n      throw new Error(\"No options found\");\n    }\n\n    let chosenOption = null;\n    if (targetValue && targetValue.trim() !== '') {\n      const targetLower = targetValue.toLowerCase().trim();\n      chosenOption = options.find(opt => \n        (opt.innerText && opt.innerText.toLowerCase().includes(targetLower)) || \n        (opt.getAttribute('label') && opt.getAttribute('label').toLowerCase().includes(targetLower)) ||\n        (opt.getAttribute('ldap') && opt.getAttribute('ldap').toLowerCase() === targetLower)\n      );\n    }\n\n    if (!chosenOption) {\n      chosenOption = options[Math.floor(Math.random() * options.length)];\n      console.log(`[QC Automa] ${id} fallback random:`, chosenOption.innerText);\n    } else {\n      console.log(`[QC Automa] ${id} đã chọn đúng Data QC:`, chosenOption.innerText);\n    }\n\n    simulateClick(chosenOption);\n    await sleep(500); // Chờ hiệu ứng select\n  };\n\n  try {\n    const getSafeParam = (paramString) => {\n      return (paramString && !paramString.includes('{{$params.')) ? paramString.trim() : '';\n    };\n\n    const qcName     = getSafeParam(`{{$params.teamName}}`);\n    const qcDivision = getSafeParam(`{{$params.division}}`);\n    const qcUnit     = getSafeParam(`{{$params.unit}}`);\n    const qcMarket   = getSafeParam(`{{$params.market}}`);\n    const qcLeader   = getSafeParam(`{{$params.leader}}`);\n\n    const nameInput = document.querySelector('[data-test-id=\"team-create-name-input\"]');\n    if (nameInput) {\n      let teamName = qcName;\n      if (teamName === '') {\n        const randomSuffix = Math.random().toString(36).substring(2, 7).toUpperCase();\n        const randomNum = Math.floor(10 + Math.random() * 90);\n        teamName = `Team ${randomSuffix} ${randomNum}`;\n      }\n      simulateInput(nameInput, teamName);\n      await sleep(300);\n    }\n\n    await selectOption('form_item_divisionCode', qcDivision);\n    await selectOption('form_item_departmentCode', qcUnit);\n    await selectOption('form_item_marketCode', qcMarket);\n    await selectOption('form_item_leaderLdap', qcLeader);\n\n    automaNextBlock();\n  } catch (error) {\n    console.error('[QC Automa] JS Execution Error:', error);\n    automaNextBlock({ $error: true });\n  }\n})();",
+                  "context": "website",
+                  "timeout": 20000,
+                  "description": "javascript-code",
+                  "everyNewTab": false,
+                  "disableBlock": false,
+                  "runBeforeLoad": false,
+                  "preloadScripts": []
+                },
+                "type": "BlockBasic",
+                "label": "javascript-code",
+                "position": {
+                  "x": 684.4184743388221,
+                  "y": -52.16899966044561
+                },
+                "initialized": false
+              },
+              {
+                "id": "9cvgcad",
+                "data": {
+                  "findBy": "cssSelector",
+                  "markEl": false,
+                  "multiple": false,
+                  "selector": "[data-test-id=\"team-create-save-btn\"]",
+                  "description": "Click Create Button",
+                  "disableBlock": false,
+                  "waitForSelector": true,
+                  "waitSelectorTimeout": 5000
+                },
+                "type": "BlockBasic",
+                "label": "event-click",
+                "position": {
+                  "x": 976.4184743388221,
+                  "y": -52.16899966044561
+                },
+                "initialized": false
+              },
+              {
+                "id": "b1lyhfg",
+                "data": {
+                  "findBy": "cssSelector",
+                  "markEl": false,
+                  "multiple": false,
+                  "selector": "[data-test-id=\"team-list-create-btn\"]",
+                  "description": "Click Button Create",
+                  "disableBlock": false,
+                  "waitForSelector": true,
+                  "waitSelectorTimeout": 5000
+                },
+                "type": "BlockBasic",
+                "label": "event-click",
+                "position": {
+                  "x": 392.4184743388221,
+                  "y": -52.16899966044561
+                },
+                "initialized": false
+              }
+            ],
+            "position": [
+              -160,
+              287
+            ],
+            "viewport": {
+              "x": -160,
+              "y": 287,
+              "zoom": 1
+            }
+          },
+          "icon": "mdiPackageVariantClosed",
+          "name": "[form] create-team-sales",
+          "inputs": [
+            {
+              "id": "zfzbit4",
+              "name": "Input",
+              "blockId": "b1lyhfg",
+              "handleId": "b1lyhfg-input-1"
+            }
+          ],
+          "asBlock": false,
+          "content": null,
+          "outputs": [
+            {
+              "id": "vvdo3or",
+              "name": "",
+              "blockId": "9cvgcad",
+              "handleId": "9cvgcad-output-1"
+            }
+          ],
+          "settings": {
+            "asBlock": true
+          },
+          "variable": [],
+          "createdAt": 1783675928583,
+          "isExtenal": false,
+          "updatedAt": 1783677127132,
+          "description": "random"
+        },
+        "type": "BlockPackage",
+        "label": "block-package",
+        "position": {
+          "x": 900,
+          "y": 90
+        },
+        "initialized": false
+      },
+      {
+        "id": "l11runb",
+        "data": {
+          "id": "KHlgzUTdwdjOdD3pa12LM",
+          "data": {
+            "zoom": 1,
+            "edges": [],
+            "nodes": [
+              {
+                "id": "new-tab-1",
+                "data": {
+                  "url": "https://{{variables.$$getSalesTeamUrl}}",
+                  "active": true,
+                  "inGroup": false,
+                  "tabZoom": 1,
+                  "userAgent": "",
+                  "description": "Open Sales Team CRM",
+                  "disableBlock": false,
+                  "updatePrevTab": true,
+                  "waitTabLoaded": true,
+                  "customUserAgent": false
+                },
+                "type": "BlockBasic",
+                "label": "new-tab",
+                "position": {
+                  "x": 400,
+                  "y": 200
+                },
+                "initialized": false
+              }
+            ],
+            "position": [
+              50,
+              13
+            ],
+            "viewport": {
+              "x": 50,
+              "y": 13,
+              "zoom": 1
+            }
+          },
+          "icon": "mdiPackageVariantClosed",
+          "name": "[nav] sales-team",
+          "inputs": [
+            {
+              "id": "10eti2o",
+              "name": "Input",
+              "blockId": "new-tab-1",
+              "handleId": "new-tab-1-input-1"
+            }
+          ],
+          "asBlock": false,
+          "content": null,
+          "outputs": [
+            {
+              "id": "aj5gw60",
+              "name": "Output",
+              "blockId": "new-tab-1",
+              "handleId": "new-tab-1-output-1"
+            }
+          ],
+          "settings": {
+            "asBlock": true
+          },
+          "variable": [],
+          "createdAt": 1783675183537,
+          "isExtenal": false,
+          "updatedAt": 1783678088153,
+          "description": "block-package"
+        },
+        "type": "BlockPackage",
+        "label": "block-package",
+        "position": {
+          "x": 520,
+          "y": 90
+        },
+        "initialized": false
+      }
+    ],
+    "position": [
+      -28.94485294117635,
+      540.7943051891756
+    ],
+    "viewport": {
+      "x": -28.94485294117635,
+      "y": 540.7943051891756,
+      "zoom": 0.8924632352941176
+    }
+  },
+  "folderId": "",
+  "settings": {
+    "onError": "stop-workflow",
+    "saveLog": true,
+    "publicId": "",
+    "debugMode": false,
+    "blockDelay": 0,
+    "execContext": "popup",
+    "aipowerToken": "",
+    "notification": true,
+    "restartTimes": 3,
+    "reuseLastState": false,
+    "defaultColumnName": "column",
+    "inputAutocomplete": true,
+    "executedBlockOnWeb": false,
+    "insertDefaultColumn": false
+  },
+  "globalData": "{\n\t\"key\": \"value\"\n}",
+  "isDisabled": false,
+  "dataColumns": [],
+  "description": "Create",
+  "connectedTable": null,
+  "updatedAt": 1784086566662
+}

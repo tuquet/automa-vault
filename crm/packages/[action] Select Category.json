@@ -1,0 +1,50 @@
+{
+  "id": "pkg-action-select-codebook-category",
+  "data": {
+    "edges": [],
+    "nodes": [
+      {
+        "id": "js_sel_cat_1",
+        "data": {
+          "code": "const variables = automaRefData('variables', '');\nconst targetCodeType = variables.select_code_type;\nconst rows = Array.from(document.querySelectorAll('.codebook-table .ant-table-tbody > tr.ant-table-row'));\nconst targetRow = rows.find(tr => tr.querySelector('td:nth-child(1) span')?.innerText.trim() === targetCodeType);\nif (targetRow) {\n  targetRow.click();\n  setTimeout(() => automaNextBlock(), 1000);\n} else {\n  console.error('Code Type not found');\n  automaNextBlock();\n}",
+          "timeout": 10000,
+          "description": "Select Category by ID",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 200,
+          "y": 100
+        }
+      }
+    ]
+  },
+  "icon": "riCursorLine",
+  "name": "[action] Select Category",
+  "inputs": [
+    {
+      "id": "in_1",
+      "name": "start",
+      "blockId": "js_sel_cat_1",
+      "handleId": "js_sel_cat_1-input-1"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "out_1",
+      "name": "end",
+      "blockId": "js_sel_cat_1",
+      "handleId": "js_sel_cat_1-output-1"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "description": "Click vào một Category theo {{variables.select_code_type}}",
+  "updatedAt": 1784086566822
+}

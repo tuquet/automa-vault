@@ -1,0 +1,50 @@
+{
+  "id": "pkg-scrape-codebook-properties",
+  "data": {
+    "edges": [],
+    "nodes": [
+      {
+        "id": "js_prop_1",
+        "data": {
+          "code": "const handles = document.querySelectorAll('.drag-handle');\nconst data = Array.from(handles).map(h => {\n  const row = h.closest('.group');\n  if(!row) return null;\n  const inputs = row.querySelectorAll('input');\n  const code = inputs[0]?.value || '';\n  const name = inputs[1]?.value || '';\n  return { code, name };\n}).filter(Boolean);\nautomaSetVariable('scraped_codebook_properties', data);\nautomaNextBlock({ properties: data });",
+          "timeout": 10000,
+          "description": "Extract Properties inside Drawer",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 200,
+          "y": 100
+        }
+      }
+    ]
+  },
+  "icon": "riFileListLine",
+  "name": "[scrape] Extract Category Details",
+  "inputs": [
+    {
+      "id": "in_1",
+      "name": "start",
+      "blockId": "js_prop_1",
+      "handleId": "js_prop_1-input-1"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "out_1",
+      "name": "end",
+      "blockId": "js_prop_1",
+      "handleId": "js_prop_1-output-1"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "description": "Quét các giá trị trong Drawer của Category và lưu vào {{variables.scraped_codebook_properties}}",
+  "updatedAt": 1784086566832
+}

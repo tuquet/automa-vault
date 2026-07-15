@@ -1,0 +1,155 @@
+{
+  "id": "pkg-auth-logout",
+  "data": {
+    "zoom": 0.7070593167513481,
+    "edges": [
+      {
+        "id": "vueflow__edge-z88mwfaz88mwfa-output-1-hy441crhy441cr-input-1",
+        "data": {},
+        "type": "custom",
+        "class": "source-z88mwfa-output-1 target-hy441cr-input-1",
+        "label": "event-click -> event-click",
+        "source": "z88mwfa",
+        "target": "hy441cr",
+        "sourceX": 313.50009226157226,
+        "sourceY": 94.50001248500722,
+        "targetX": 658.9999923815145,
+        "targetY": 94.50001248500722,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "z88mwfa-output-1",
+        "targetHandle": "hy441cr-input-1"
+      },
+      {
+        "id": "vueflow__edge-hy441crhy441cr-output-1-px5hfsdpx5hfsd-input-1",
+        "data": {},
+        "type": "custom",
+        "class": "source-hy441cr-output-1 target-px5hfsd-input-1",
+        "label": "event-click -> event-click",
+        "source": "hy441cr",
+        "target": "px5hfsd",
+        "sourceX": 899.0000922615723,
+        "sourceY": 94.50001248500722,
+        "targetX": 1242.9999060589357,
+        "targetY": 94.50001248500722,
+        "markerEnd": "arrowclosed",
+        "updatable": true,
+        "selectable": true,
+        "sourceHandle": "hy441cr-output-1",
+        "targetHandle": "px5hfsd-input-1"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "z88mwfa",
+        "data": {
+          "findBy": "xpath",
+          "markEl": false,
+          "multiple": false,
+          "selector": "//div[@class='sidebar-footer']//div[contains(@class, 'footer-action-btn')]",
+          "description": "1. Click mở Menu của Ant Design",
+          "disableBlock": false,
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "event-click",
+        "position": {
+          "x": 97.5,
+          "y": 58.5
+        },
+        "initialized": false
+      },
+      {
+        "id": "hy441cr",
+        "data": {
+          "findBy": "xpath",
+          "markEl": false,
+          "multiple": false,
+          "selector": "//li[@data-menu-id='logout']",
+          "description": "2. Click chọn mục Logout",
+          "disableBlock": false,
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "event-click",
+        "position": {
+          "x": 683,
+          "y": 58.5
+        },
+        "initialized": false
+      },
+      {
+        "id": "px5hfsd",
+        "data": {
+          "findBy": "xpath",
+          "markEl": false,
+          "multiple": false,
+          "selector": "//div[@class='ant-modal-confirm-btns']//button//span[normalize-space()='Logout']/parent::button",
+          "description": "3. Click chọn mục Logout",
+          "disableBlock": false,
+          "waitForSelector": true,
+          "waitSelectorTimeout": 5000
+        },
+        "type": "BlockBasic",
+        "label": "event-click",
+        "position": {
+          "x": 1267,
+          "y": 58.5
+        },
+        "initialized": false
+      }
+    ],
+    "position": [
+      175,
+      350
+    ],
+    "viewport": {
+      "x": 175,
+      "y": 350,
+      "zoom": 0.7070593167513481
+    }
+  },
+  "icon": "riLogoutCircleRLine",
+  "name": "[auth] Logout",
+  "inputs": [
+    {
+      "id": "ah9s560",
+      "name": "start",
+      "blockId": "z88mwfa",
+      "handleId": "z88mwfa-input-1"
+    }
+  ],
+  "asBlock": false,
+  "content": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Trang này là mô tả",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "outputs": [
+    {
+      "id": "9igqm09",
+      "name": "end",
+      "blockId": "px5hfsd",
+      "handleId": "px5hfsd-output-1"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "variable": [],
+  "isExtenal": false,
+  "description": "Hành động logout",
+  "updatedAt": 1784086566823
+}

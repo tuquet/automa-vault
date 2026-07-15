@@ -1,0 +1,50 @@
+{
+  "id": "pkg-action-capture-html",
+  "data": {
+    "edges": [],
+    "nodes": [
+      {
+        "id": "js_capture_html_1",
+        "data": {
+          "code": "const html = document.documentElement.outerHTML;\nconst url = window.location.href;\n\n// Get snapshot name from Automa variable, fallback to document.title\nconst uniqueName = automaRefData('variables', 'snapshotName') || document.title;\n\nfetch(automaRefData('variables', '$$supabaseUrl') + '/rest/v1/html_snapshots?on_conflict=nav_name', {\n  method: 'POST',\n  headers: {\n    'apikey': automaRefData('variables', '$$supabaseKey'),\n    'Authorization': 'Bearer ' + automaRefData('variables', '$$supabaseKey'),\n    'Content-Type': 'application/json',\n    'Prefer': 'return=representation,resolution=merge-duplicates'\n  },\n  body: JSON.stringify({\n    nav_name: uniqueName,\n    url: url,\n    html_content: html\n  })\n}).then(async (res) => {\n  if (!res.ok) {\n    const err = await res.text();\n    console.error(\"Supabase Insert Error:\", err);\n  }\n  automaNextBlock();\n}).catch((e) => {\n  console.error(\"Fetch Error:\", e);\n  automaNextBlock();\n});",
+          "timeout": 10000,
+          "description": "Capture HTML Snapshot",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 100,
+          "y": 100
+        }
+      }
+    ]
+  },
+  "icon": "riGlobalLine",
+  "name": "[action] Capture HTML to DB",
+  "inputs": [
+    {
+      "id": "in_1",
+      "name": "start",
+      "blockId": "js_capture_html_1",
+      "handleId": "js_capture_html_1-input-1"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "out_1",
+      "name": "end",
+      "blockId": "js_capture_html_1",
+      "handleId": "js_capture_html_1-output-1"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "description": "Chụp HTML DOM và lưu vào DB (dùng biến snapshotName hoặc title)",
+  "updatedAt": 1784086566819
+}

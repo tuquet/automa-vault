@@ -1,0 +1,50 @@
+{
+  "id": "pkg-scrape-codebook-categories",
+  "data": {
+    "edges": [],
+    "nodes": [
+      {
+        "id": "js_cat_1",
+        "data": {
+          "code": "const rows = Array.from(document.querySelectorAll('.codebook-table .ant-table-tbody > tr.ant-table-row'));\nconst data = rows.map(tr => {\n  const codeType = tr.querySelector('td:nth-child(1) span')?.innerText.trim() || '';\n  const name = tr.querySelector('td:nth-child(2)')?.innerText.trim() || '';\n  const desc = tr.querySelector('td:nth-child(3)')?.innerText.trim() || '';\n  const status = tr.querySelector('td:nth-child(4) .pill')?.innerText.trim() || '';\n  return { codeType, name, desc, status };\n}).filter(r => r.codeType);\nautomaSetVariable('scraped_codebook_categories', data);\nautomaNextBlock({ categories: data });",
+          "timeout": 10000,
+          "description": "Extract Code Categories",
+          "disableBlock": false,
+          "context": "website",
+          "preloadScripts": [],
+          "everyNewTab": false,
+          "runBeforeLoad": false
+        },
+        "type": "BlockBasic",
+        "label": "javascript-code",
+        "position": {
+          "x": 200,
+          "y": 100
+        }
+      }
+    ]
+  },
+  "icon": "riFolderOpenLine",
+  "name": "[scrape] Extract Codebook Categories",
+  "inputs": [
+    {
+      "id": "in_1",
+      "name": "start",
+      "blockId": "js_cat_1",
+      "handleId": "js_cat_1-input-1"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "out_1",
+      "name": "end",
+      "blockId": "js_cat_1",
+      "handleId": "js_cat_1-output-1"
+    }
+  ],
+  "settings": {
+    "asBlock": true
+  },
+  "description": "Quét danh sách Code Type và lưu vào {{variables.scraped_codebook_categories}}",
+  "updatedAt": 1784086566833
+}
