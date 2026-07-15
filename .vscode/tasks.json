@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "CLI: Install Dependencies",
+      "label": "Vault: Install Dependencies",
       "type": "shell",
       "command": "pnpm install",
       "options": {
@@ -14,7 +14,7 @@
       }
     },
     {
-      "label": "CLI: Push to Database",
+      "label": "Vault: Push to Database",
       "type": "shell",
       "command": "npm run push -- --project=crm",
       "options": {
@@ -23,7 +23,7 @@
       "problemMatcher": []
     },
     {
-      "label": "CLI: Pull from Database",
+      "label": "Vault: Pull from Database",
       "type": "shell",
       "command": "npm run pull -- --project=crm",
       "options": {
@@ -32,7 +32,7 @@
       "problemMatcher": []
     },
     {
-      "label": "CLI: Check Sync Status",
+      "label": "Vault: Check Sync Status",
       "type": "shell",
       "command": "npm run status -- --project=crm",
       "options": {
@@ -41,7 +41,7 @@
       "problemMatcher": []
     },
     {
-      "label": "CLI: Lint Workflows & Packages",
+      "label": "Vault: Lint Workflows & Packages",
       "type": "shell",
       "command": "npm run lint -- --project=crm",
       "options": {
