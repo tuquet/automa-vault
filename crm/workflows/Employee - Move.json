@@ -232,7 +232,7 @@
           "userAgent": "",
           "tabZoom": 1,
           "inGroup": false,
-          "waitTabLoaded": false,
+          "waitTabLoaded": true,
           "updatePrevTab": false,
           "customUserAgent": false
         },
@@ -254,7 +254,7 @@
           "description": "Nhập LDAP vào ô tìm kiếm",
           "disableBlock": false,
           "findBy": "cssSelector",
-          "waitForSelector": false,
+          "waitForSelector": true,
           "waitSelectorTimeout": 5000,
           "markEl": false,
           "multiple": false,
